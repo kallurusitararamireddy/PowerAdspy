@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Power AD Spy Application Automation Suite">
+
+<parameter name="testng.metrics.report.logo" value = "https://poweradspy.com/wp-content/uploads/2018/05/Untitled-design-3.png"/>
+	<parameter name="testng.metrics.report.name" value = "Power_Automation_Report.html"/>
+	 <parameter name="testng.metrics.report.appendTimestamp" value = "True"/> 
+	
+	<listeners>
+      <listener class-name="com.power.qa.util.TestStatusListener"/>
+    </listeners>
+	<test name="PowerAdSpy Application Test">
+    <classes>
+       <class name="com.power.testcases.Power_Ad_Spy_VerifyDashboard_Page"/> 
+       <class name="com.power.testcases.Verify_Facebook_Dashboard_Filters"/>
+       <class name="com.power.testcases.Verify_Insta_Dashboard_Filters"/>
+      <class name="com.power.testcases.Verify_Youtube_Dashboard_Filters"/> 
+      <class name="com.power.testcases.Verify_Googleads_Dashboard_Filters"/>
+       <class name="com.power.testcases.Verify_Gdn_Dashboard_Filters"/> 
+       <class name="com.power.testcases.Verify_Native_Dashboard_Filters"/> 
+       <class name="com.power.testcases.Verify_Reddit_Dashboard_Filters"/>
+       <class name="com.power.testcases.Verify_Quora_Dashboard_Filters"/> 
+        <class name="com.power.testcases.Verify_Pintrest_Dashboard_Filters"/> 
+      <class name="com.power.testcases.Verify_Linkedin_Dashboard_Filters"/>
+       <class name="com.power.testcases.Verify_Twitter_Dashboard_Filters"/> 
+       <class name="com.power.testcases.Verify_Pushads_Dashboard_Filters"/> 
+       
+       
+         
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
