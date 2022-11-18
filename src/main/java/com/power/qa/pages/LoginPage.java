@@ -4,6 +4,7 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -37,10 +38,35 @@ public class LoginPage  extends BasePage{
 	@FindBy(xpath = "//input[@value='Login']")
 	WebElement Button_login;
 	
+	@FindBy(xpath="(//div[@class='recaptcha-checkbox-border'])[1]")
+	WebElement cpatchaInputBox;
+	
+	@FindBy(xpath="//label[text()='I'm not a robot']")
+	WebElement iAmNotRobotText;
+	
+
+	//driver.findElement(By.xpath("(//div[@class='recaptcha-checkbox-border'])[1]")).click();
 
 	
 	public void login(String un, String pwd) throws InterruptedException{
 		
+		try {
+		      driver.switchTo().frame(0);
+		      helper.highLightElement(driver, cpatchaInputBox);
+		      cpatchaInputBox.click();
+		      Reporter.log("<B><font color = 'blue'>Password .</font></B> Entered captchRobot");
+		      Thread.sleep(1000);
+		      driver.switchTo().defaultContent();
+		      System.out.println("PowerAdSpy Site");
+		      Reporter.log("<B><font color = 'blue'>Password .</font></B> PowerAdSpy Site");
+		    } catch (Exception e) {
+		      // TODO: handle exception
+		      
+		      System.out.println("Robot Capture is not present");
+		      Reporter.log("<B><font color = 'blue'>Password .</font></B> Robot Capture is not present");
+		      System.out.println("PowerAdSpy this is Dev Site");
+		      Reporter.log("<B><font color = 'blue'>Password .</font></B> PowerAdSpy this is Dev Site");
+		    }
 		
 		helper.highLightElement(driver, input_username);
 		input_username.sendKeys(un);
@@ -53,6 +79,8 @@ public class LoginPage  extends BasePage{
 		helper.highLightElement(driver, Button_login);
 		Button_login.click();		
 		Reporter.log("<B><font color = 'blue'>Sign In Button .</font></B> Clicked on Submit Button");
+		
+		
 		
 		Thread.sleep(3000);
 	

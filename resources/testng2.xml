@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Power AD Spy Application Automation Suite"  parallel="methods" thread-count="2">
+
+<parameter name="testng.metrics.report.logo" value = "https://poweradspy.com/wp-content/uploads/2018/05/Untitled-design-3.png"/>
+	<parameter name="testng.metrics.report.name" value = "PowerAdsSpy_Automation_Report.html"/>
+	 <parameter name="testng.metrics.report.appendTimestamp" value = "True"/> 
+	
+	<listeners>
+      <listener class-name="com.power.qa.util.TestStatusListener"/>
+    </listeners>
+    
+	<test name="PowerAdSpy Application Test">
+	
+    <classes>
+    
+    		<!--*************************** PowerAdSpy Dashboard Module *****************************-->
+	
+
+			<!--*************************** FaceBook Ads Dashboard Module *****************************-->
+
+
+			<!--*************************** Instagram Ads Dashboard Module *****************************-->
+
+			 	<class name="com.power.testcases.Verify_Instagram_DashBoard_SortBy"/> 
+      		 	<class name="com.power.testcases.Verify_Instagram_DashBoard_AdSeenBetween"/> 
+      		 	<class name="com.power.testcases.Verify_Instagram_DashBoard_PostDateBetween"/> 
+				<!--<class name="com.power.testcases.Verify_Instagram_DashBoard_DomainRegsDate"/>  -->      		 		
+
+			<!--*************************** Youtube Ads Dashboard Module *****************************-->
+
+
+			<!--*************************** Google Ads Dashboard Module *****************************-->
+
+
+			<!--*************************** GDN Ads Dashboard Module *****************************-->
+
+
+			<!--*************************** Native Ads Dashboard Module *****************************-->
+
+
+			<!--*************************** Reddit Ads Dashboard Module *****************************-->
+
+
+			<!--*************************** Quora Ads Dashboard Module *****************************-->
+
+
+			<!--*************************** Pinterest Ads Dashboard Module *****************************-->
+
+
+			<!--*************************** LinkedIn Ads Dashboard Module *****************************-->
+
+
+			<!--*************************** Twitter Ads Dashboard Module *****************************-->
+
+
+			<!--*************************** Push Ads Dashboard Module *****************************-->
+    
+      
+	    
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

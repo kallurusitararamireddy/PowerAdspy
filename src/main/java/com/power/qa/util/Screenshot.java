@@ -3,6 +3,7 @@ package com.power.qa.util;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Calendar;
 
 import org.apache.commons.io.FileUtils;
@@ -91,7 +92,6 @@ public class Screenshot extends TestListenerAdapter  {
 		} catch (Exception ex) {
 			System.out.println("Screenshot error is" + ex.getMessage());
 		}
-
 		return dest;
 
 	}

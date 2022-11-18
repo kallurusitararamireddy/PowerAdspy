@@ -11,7 +11,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.ITestResult;
@@ -31,7 +30,6 @@ import com.power.qa.util.Helpers;
 import com.power.qa.util.ReadConfig;
 import com.power.qa.util.Screenshot;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class TestBase {	
@@ -80,9 +78,9 @@ public class TestBase {
 		String browserName = prop.getProperty("Browser");
 		ChromeOptions options = new ChromeOptions();
 		if (browserName.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver", readconfig.getChromepath());
+		//	System.setProperty("webdriver.chrome.driver", readconfig.getChromepath());
 			System.setProperty("webdriver.chrome.silentOutput", "true");
-			WebDriverManager.chromedriver().setup();
+		//	WebDriverManager.chromedriver().setup();
 			driver.set(new ChromeDriver());			
 			Dimension dimension = new Dimension(450,600);
 			getDriver().manage().window().setSize(dimension);			
@@ -94,19 +92,20 @@ public class TestBase {
 			System.out.println("Desired Capabilities are: "+ chrome.getCapability("timeouts"));
 		
 			
-		} else if (browserName.equalsIgnoreCase("firefox")) {
-			System.setProperty("webdriver.gecko.driver", readconfig.getFirefoxpath());
-			WebDriverManager.firefoxdriver().setup();
+		} 
+		else if (browserName.equalsIgnoreCase("firefox")) {
+		//	System.setProperty("webdriver.gecko.driver", readconfig.getFirefoxpath());
+		//	WebDriverManager.firefoxdriver().setup();
 			driver.set(new FirefoxDriver());				
 
-		} else if (browserName.equalsIgnoreCase("opera")) {
-			System.setProperty("webdriver.opera.driver", readconfig.getOperapath());
-			WebDriverManager.operadriver().setup();
-			driver.set(new OperaDriver());
-			
+//		} else if (browserName.equalsIgnoreCase("opera")) {
+//			System.setProperty("webdriver.opera.driver", readconfig.getOperapath());
+//			WebDriverManager.operadriver().setup();
+//			driver.set(new OperaDriver());
+//			
 		} else if (browserName.equalsIgnoreCase("edge")) {
-			System.setProperty("webdriver.edge.driver", readconfig.getEdgePath());
-			WebDriverManager.edgedriver().setup();
+		//	System.setProperty("webdriver.edge.driver", readconfig.getEdgePath());
+		//	WebDriverManager.edgedriver().setup();
 			driver.set(new EdgeDriver());
 			
 		} else {

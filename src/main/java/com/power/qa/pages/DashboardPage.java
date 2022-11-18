@@ -318,7 +318,7 @@ public class DashboardPage extends BasePage {
 		// Thread.sleep(80000);
 
 		List<WebElement> Amazonproducts = driver.findElements(By.cssSelector(".card-body"));
-		int AMZProducts = Amazonproducts.size();
+		int AMZProducts = Amazonproducts.size(); 
 		System.out.println(AMZProducts);
 		Reporter.log(
 				"<B><font color = 'orange'> Step5 -</font> Total Ad Results for the Advertiser 'Amazon & Alexa' is :"

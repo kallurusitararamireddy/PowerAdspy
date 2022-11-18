@@ -41,11 +41,9 @@ public class TestUtil extends TestBase {
 		}
 		try {
 			book = WorkbookFactory.create(file);
-		} catch (InvalidFormatException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		} 
 		sheet = book.getSheet(sheetName);
 		Object[][] data = new Object[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
 		// System.out.println(sheet.getLastRowNum() + "--------" +
