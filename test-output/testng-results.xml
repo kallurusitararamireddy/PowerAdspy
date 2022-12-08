@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[<B><font color = 'blue'>Password .</font></B> Robot Capture is not present]]>
+    </line>
+    <line>
+      <![CDATA[<B><font color = 'blue'>Password .</font></B> PowerAdSpy this is Dev Site]]>
+    </line>
+    <line>
+      <![CDATA[<B><font color = 'blue'>Username .</font></B> Entered User ID]]>
+    </line>
+    <line>
+      <![CDATA[<B><font color = 'blue'>Password .</font></B> Entered Password]]>
+    </line>
+    <line>
+      <![CDATA[<B><font color = 'blue'>Sign In Button .</font></B> Clicked on Submit Button]]>
+    </line>
+    <line>
+      <![CDATA[<B><font color = 'orange'> Step1 -</font> Logged into PowerAdSpy Application]]>
+    </line>
+    <line>
+      <![CDATA[<B><font color = 'orange'> Step2 -</font> I am on the page :PowerAdSpy | Facebook Dashboard]]>
+    </line>
+    <line>
+      <![CDATA[<B><font color = 'orange'> Step3 -</font> Power Ad Spy Logo is Displayed]]>
+    </line>
+    <line>
+      <![CDATA[<B><font color = 'orange'> Step4 -</font> Clicked On Google Icon]]>
+    </line>
+    <line>
+      <![CDATA[<B><font color = 'orange'> Step5 -</font> I am on the page :PowerAdSpy | Google Dashboard]]>
+    </line>
+    <line>
+      <![CDATA[<B><font color = 'orange'> Step6 -</font> Total Ad Results for the Search term 'News' is :9]]>
+    </line>
+    <line>
+      <![CDATA[<B><font color = 'orange'> Step7 -</font> Total Ad Results for the Search term 'Vice' is :0]]>
+    </line>
+    <line>
+      <![CDATA[<B><font color = 'orange'> Step8 -</font> Total Ad Results for the Search term 'Virat kohli' is :0]]>
+    </line>
+    <line>
+      <![CDATA[<B><font color = 'orange'> Step9 -</font> Total Ad Results for the Search term 'covid' is :0]]>
+    </line>
+    <line>
+      <![CDATA[<B><font color = 'orange'> Step10 -</font> Total Ad Results for the Search term 'Blog' is :0]]>
+    </line>
+    <line>
+      <![CDATA[<B><font color = 'orange'> Step11 -</font> Total Ad Results for the Search term 'Shoes' is :0]]>
+    </line>
+    <line>
+      <![CDATA[<B><font color = 'orange'> Step12 -</font> Total Ad Results for the Search term 'Developer' is :0]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2022-11-18T18:12:37 IST" name="Default suite" finished-at="2022-11-18T18:17:07 IST" duration-ms="270872">
+    <groups>
+    </groups>
+    <test started-at="2022-11-18T18:12:37 IST" name="Default test" finished-at="2022-11-18T18:17:07 IST" duration-ms="270872">
+      <class name="com.power.testcases.Verify_Googleads_Dashboard_Filters">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:com.power.testcases.Verify_Googleads_Dashboard_Filters@6ea2bc93]" started-at="2022-11-18T18:12:36 IST" name="beforeSuite" finished-at="2022-11-18T18:12:37 IST" duration-ms="32" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method is-config="true" signature="initialization()[pri:0, instance:com.power.testcases.Verify_Googleads_Dashboard_Filters@6ea2bc93]" started-at="2022-11-18T18:12:37 IST" name="initialization" finished-at="2022-11-18T18:12:43 IST" duration-ms="6492" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialization -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.power.testcases.Verify_Googleads_Dashboard_Filters@6ea2bc93]" started-at="2022-11-18T18:12:43 IST" name="setUp" finished-at="2022-11-18T18:12:48 IST" duration-ms="5010" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[<B><font color = 'blue'>Password .</font></B> Robot Capture is not present]]>
+            </line>
+            <line>
+              <![CDATA[<B><font color = 'blue'>Password .</font></B> PowerAdSpy this is Dev Site]]>
+            </line>
+            <line>
+              <![CDATA[<B><font color = 'blue'>Username .</font></B> Entered User ID]]>
+            </line>
+            <line>
+              <![CDATA[<B><font color = 'blue'>Password .</font></B> Entered Password]]>
+            </line>
+            <line>
+              <![CDATA[<B><font color = 'blue'>Sign In Button .</font></B> Clicked on Submit Button]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="Verify_Googleads_Filters()[pri:0, instance:com.power.testcases.Verify_Googleads_Dashboard_Filters@6ea2bc93]" started-at="2022-11-18T18:12:48 IST" name="Verify_Googleads_Filters" finished-at="2022-11-18T18:17:07 IST" duration-ms="259008" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[<B><font color = 'orange'> Step1 -</font> Logged into PowerAdSpy Application]]>
+            </line>
+            <line>
+              <![CDATA[<B><font color = 'orange'> Step2 -</font> I am on the page :PowerAdSpy | Facebook Dashboard]]>
+            </line>
+            <line>
+              <![CDATA[<B><font color = 'orange'> Step3 -</font> Power Ad Spy Logo is Displayed]]>
+            </line>
+            <line>
+              <![CDATA[<B><font color = 'orange'> Step4 -</font> Clicked On Google Icon]]>
+            </line>
+            <line>
+              <![CDATA[<B><font color = 'orange'> Step5 -</font> I am on the page :PowerAdSpy | Google Dashboard]]>
+            </line>
+            <line>
+              <![CDATA[<B><font color = 'orange'> Step6 -</font> Total Ad Results for the Search term 'News' is :9]]>
+            </line>
+            <line>
+              <![CDATA[<B><font color = 'orange'> Step7 -</font> Total Ad Results for the Search term 'Vice' is :0]]>
+            </line>
+            <line>
+              <![CDATA[<B><font color = 'orange'> Step8 -</font> Total Ad Results for the Search term 'Virat kohli' is :0]]>
+            </line>
+            <line>
+              <![CDATA[<B><font color = 'orange'> Step9 -</font> Total Ad Results for the Search term 'covid' is :0]]>
+            </line>
+            <line>
+              <![CDATA[<B><font color = 'orange'> Step10 -</font> Total Ad Results for the Search term 'Blog' is :0]]>
+            </line>
+            <line>
+              <![CDATA[<B><font color = 'orange'> Step11 -</font> Total Ad Results for the Search term 'Shoes' is :0]]>
+            </line>
+            <line>
+              <![CDATA[<B><font color = 'orange'> Step12 -</font> Total Ad Results for the Search term 'Developer' is :0]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Verify_Googleads_Filters -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.power.testcases.Verify_Googleads_Dashboard_Filters@6ea2bc93]" started-at="2022-11-18T18:17:07 IST" name="tearDown" finished-at="2022-11-18T18:17:07 IST" duration-ms="279" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Verify_Googleads_Filters status=SUCCESS method=Verify_Googleads_Dashboard_Filters.Verify_Googleads_Filters()[pri:0, instance:com.power.testcases.Verify_Googleads_Dashboard_Filters@6ea2bc93] output=<B><font color = 'orange'> Step1 -</font> Logged into PowerAdSpy Application]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.power.testcases.Verify_Googleads_Dashboard_Filters -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
