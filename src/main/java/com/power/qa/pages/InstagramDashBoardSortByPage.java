@@ -174,6 +174,11 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		Assert.assertTrue(Instagram.isDisplayed(), "Clicked on Instagram ");
 		Reporter.log("<B><font color = 'Burgundy'> Step4 -</font> Clicked On Instagram Icon");
 		//helper.waitForPageToLoad();
+		
+		String Page_titel_1 = driver.getTitle();
+		System.out.println(Page_titel);
+		Reporter.log("<B><font color = 'purple'> Step5 -</font> I am on the page :" + Page_titel_1);
+		
 	
 		Reporter.log("");
 		Reporter.log("<B><font color = 'green'> Newest field -</font> ");
@@ -223,6 +228,20 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		helper.Scrollintoview(showAnalytics_Button1);
 		helper.waitFor(showAnalytics_Button1);
 		helper.highLightElement(driver, showAnalytics_Button1);
+		
+		String linkText = showAnalytics_Button1.getAttribute("href");
+		System.out.println("linkText : " + linkText);
+		
+		String idString = null;
+			
+			String[] splitStringid = linkText.split("/");
+			for(int i=0;i<splitStringid.length;i++) {
+				String actualDate=splitStringid[splitStringid.length-1]; 
+				System.out.println("actualDate : " + actualDate);
+				Reporter.log("<B><font color = 'blue'> ==> -</font> ID of the 1st Ad = " + actualDate);
+				break;
+			}
+			
 		helper.jsCLick(showAnalytics_Button1);
 		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
 		
@@ -271,13 +290,26 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		helper.highLightElement(driver, current_date2);
 		String imageDate=current_date2.getText();
 		System.out.println("currentDatenewest : " + imageDate);
-		Reporter.log("<B><font color = 'red'> ==> -</font> CurrentDatenewest Image in Instagram DashBoard= " + imageDate);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDatenewest Image in Instagram DashBoard= " + imageDate);
 		
 		helper.Scrollintoview(showAnalytics_Button2);
 		helper.waitFor(showAnalytics_Button2);
 		helper.highLightElement(driver, showAnalytics_Button2);
+		String linkText = showAnalytics_Button2.getAttribute("href");
+		System.out.println("linkText : " + linkText);
+		
+		String idString = null;
+			
+			String[] splitStringid = linkText.split("/");
+			for(int i=0;i<splitStringid.length;i++) {
+				String actualDate=splitStringid[splitStringid.length-1]; 
+				System.out.println("actualDate : " + actualDate);
+				Reporter.log("<B><font color = 'blue'> ==> -</font> ID of the 2nd Ad = " + actualDate);
+				break;
+			}
+			
 		helper.jsCLick(showAnalytics_Button2);
-		Reporter.log("<B><font color = 'red'> ==> -</font> Clicked on showAnalytics Button");
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
 		
 		Set<String> S1=driver.getWindowHandles();
 	    Iterator<String>it=S1.iterator();
@@ -291,7 +323,7 @@ public class InstagramDashBoardSortByPage extends BasePage{
 	    helper.highLightElement(driver, Last_Seen_childWindow);
 	    String lastSeenDate = Last_Seen_childWindow.getText();
 	    System.out.println("Last_Seen_childWindow : " + lastSeenDate);
-	    Reporter.log("<B><font color = 'red'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+	    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
 	    
 	    driver.close();
 	    
@@ -308,7 +340,7 @@ public class InstagramDashBoardSortByPage extends BasePage{
 			}
 		//	System.out.println("lastseen Date in Newest: " + joinString);
 		Assert.assertEquals(imageDate, joinString);
-		Reporter.log("<B><font color = 'red'> ==> -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
 
 		}
 		catch(Exception e) {
@@ -329,6 +361,20 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		helper.Scrollintoview(showAnalytics_Button3);
 		helper.waitFor(showAnalytics_Button3);
 		helper.highLightElement(driver, showAnalytics_Button3);
+		
+		String linkText = showAnalytics_Button3.getAttribute("href");
+		System.out.println("linkText : " + linkText);
+		
+		String idString = null;
+			
+			String[] splitStringid = linkText.split("/");
+			for(int i=0;i<splitStringid.length;i++) {
+				String actualDate=splitStringid[splitStringid.length-1]; 
+				System.out.println("actualDate : " + actualDate);
+				Reporter.log("<B><font color = 'blue'> ==> -</font> ID of the 1st Ad = " + actualDate);
+				break;
+			}
+			
 		helper.jsCLick(showAnalytics_Button3);
 		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
 		
@@ -377,11 +423,25 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		helper.highLightElement(driver, current_date4);
 		String imageDate=current_date4.getText();
 		System.out.println("currentDatenewest : " + imageDate);
-		Reporter.log("<B><font color = 'red'> ==> -</font> CurrentDatenewest Image in Instagram DashBoard= " + imageDate);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDatenewest Image in Instagram DashBoard= " + imageDate);
 		
 		helper.Scrollintoview(showAnalytics_Button4);
 		helper.waitFor(showAnalytics_Button4);
 		helper.highLightElement(driver, showAnalytics_Button4);
+		
+		String linkText = showAnalytics_Button4.getAttribute("href");
+		System.out.println("linkText : " + linkText);
+		
+		String idString = null;
+			
+			String[] splitStringid = linkText.split("/");
+			for(int i=0;i<splitStringid.length;i++) {
+				String actualDate=splitStringid[splitStringid.length-1]; 
+				System.out.println("actualDate : " + actualDate);
+				Reporter.log("<B><font color = 'blue'> ==> -</font> ID of the 4th Ad = " + actualDate);
+				break;
+			}
+			
 		helper.jsCLick(showAnalytics_Button4);
 		Reporter.log("<B><font color = 'red'> ==> -</font> Clicked on showAnalytics Button");
 		
@@ -397,7 +457,7 @@ public class InstagramDashBoardSortByPage extends BasePage{
 	    helper.highLightElement(driver, Last_Seen_childWindow);
 	    String lastSeenDate = Last_Seen_childWindow.getText();
 	    System.out.println("Last_Seen_childWindow : " + lastSeenDate);
-	    Reporter.log("<B><font color = 'red'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+	    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
 	    
 	    driver.close();
 	    
@@ -414,7 +474,7 @@ public class InstagramDashBoardSortByPage extends BasePage{
 			}
 		//	System.out.println("lastseen Date in Newest: " + joinString);
 		Assert.assertEquals(imageDate, joinString);
-		Reporter.log("<B><font color = 'red'> ==> -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
 
 		}
 		catch(Exception e) {
@@ -435,6 +495,20 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		helper.Scrollintoview(showAnalytics_Button5);
 		helper.waitFor(showAnalytics_Button5);
 		helper.highLightElement(driver, showAnalytics_Button5);
+		
+		String linkText = showAnalytics_Button5.getAttribute("href");
+		System.out.println("linkText : " + linkText);
+		
+		String idString = null;
+			
+			String[] splitStringid = linkText.split("/");
+			for(int i=0;i<splitStringid.length;i++) {
+				String actualDate=splitStringid[splitStringid.length-1]; 
+				System.out.println("actualDate : " + actualDate);
+				Reporter.log("<B><font color = 'blue'> ==> -</font> ID of the 5th Ad = " + actualDate);
+				break;
+			}
+			
 		helper.jsCLick(showAnalytics_Button5);
 		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
 		
@@ -483,13 +557,27 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		helper.highLightElement(driver, current_date6);
 		String imageDate=current_date6.getText();
 		System.out.println("currentDatenewest : " + imageDate);
-		Reporter.log("<B><font color = 'red'> ==> -</font> CurrentDatenewest Image in Instagram DashBoard= " + imageDate);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDatenewest Image in Instagram DashBoard= " + imageDate);
 		
 		helper.Scrollintoview(showAnalytics_Button6);
 		helper.waitFor(showAnalytics_Button6);
 		helper.highLightElement(driver, showAnalytics_Button6);
+		
+		String linkText = showAnalytics_Button6.getAttribute("href");
+		System.out.println("linkText : " + linkText);
+		
+		String idString = null;
+			
+			String[] splitStringid = linkText.split("/");
+			for(int i=0;i<splitStringid.length;i++) {
+				String actualDate=splitStringid[splitStringid.length-1]; 
+				System.out.println("actualDate : " + actualDate);
+				Reporter.log("<B><font color = 'blue'> ==> -</font> ID of the 6th Ad = " + actualDate);
+				break;
+			}
+			
 		helper.jsCLick(showAnalytics_Button6);
-		Reporter.log("<B><font color = 'red'> ==> -</font> Clicked on showAnalytics Button");
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
 		
 		Set<String> S1=driver.getWindowHandles();
 	    Iterator<String>it=S1.iterator();
@@ -503,7 +591,7 @@ public class InstagramDashBoardSortByPage extends BasePage{
 	    helper.highLightElement(driver, Last_Seen_childWindow);
 	    String lastSeenDate = Last_Seen_childWindow.getText();
 	    System.out.println("Last_Seen_childWindow : " + lastSeenDate);
-	    Reporter.log("<B><font color = 'red'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+	    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
 	    
 	    driver.close();
 	    
@@ -520,7 +608,7 @@ public class InstagramDashBoardSortByPage extends BasePage{
 			}
 		//	System.out.println("lastseen Date in Newest: " + joinString);
 		Assert.assertEquals(imageDate, joinString);
-		Reporter.log("<B><font color = 'red'> ==> -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
 
 		}
 		catch(Exception e) {
@@ -541,6 +629,20 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		helper.Scrollintoview(showAnalytics_Button7);
 		helper.waitFor(showAnalytics_Button7);
 		helper.highLightElement(driver, showAnalytics_Button7);
+		
+		String linkText = showAnalytics_Button7.getAttribute("href");
+		System.out.println("linkText : " + linkText);
+		
+		String idString = null;
+			
+			String[] splitStringid = linkText.split("/");
+			for(int i=0;i<splitStringid.length;i++) {
+				String actualDate=splitStringid[splitStringid.length-1]; 
+				System.out.println("actualDate : " + actualDate);
+				Reporter.log("<B><font color = 'blue'> ==> -</font> ID of the 7th Ad = " + actualDate);
+				break;
+			}
+			
 		helper.jsCLick(showAnalytics_Button7);
 		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
 		
@@ -594,6 +696,20 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		helper.Scrollintoview(showAnalytics_Button8);
 		helper.waitFor(showAnalytics_Button8);
 		helper.highLightElement(driver, showAnalytics_Button8);
+		
+		String linkText = showAnalytics_Button8.getAttribute("href");
+		System.out.println("linkText : " + linkText);
+		
+		String idString = null;
+			
+			String[] splitStringid = linkText.split("/");
+			for(int i=0;i<splitStringid.length;i++) {
+				String actualDate=splitStringid[splitStringid.length-1]; 
+				System.out.println("actualDate : " + actualDate);
+				Reporter.log("<B><font color = 'blue'> ==> -</font> ID of the 8th Ad = " + actualDate);
+				break;
+			}
+		
 		helper.jsCLick(showAnalytics_Button8);
 		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
 		
@@ -642,13 +758,26 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		helper.highLightElement(driver, current_date9);
 		String imageDate=current_date9.getText();
 		System.out.println("currentDatenewest : " + imageDate);
-		Reporter.log("<B><font color = 'red'> ==> -</font> CurrentDatenewest Image in Instagram DashBoard= " + imageDate);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDatenewest Image in Instagram DashBoard= " + imageDate);
 		
 		helper.Scrollintoview(showAnalytics_Button9);
 		helper.waitFor(showAnalytics_Button9);
 		helper.highLightElement(driver, showAnalytics_Button9);
+		
+		String linkText = showAnalytics_Button9.getAttribute("href");
+		System.out.println("linkText : " + linkText);
+		
+		String idString = null;
+			
+			String[] splitStringid = linkText.split("/");
+			for(int i=0;i<splitStringid.length;i++) {
+				String actualDate=splitStringid[splitStringid.length-1]; 
+				System.out.println("actualDate : " + actualDate);
+				Reporter.log("<B><font color = 'blue'> ==> -</font> ID of the 9th Ad = " + actualDate);
+				break;
+			}
 		helper.jsCLick(showAnalytics_Button9);
-		Reporter.log("<B><font color = 'red'> ==> -</font> Clicked on showAnalytics Button");
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
 		
 		Set<String> S1=driver.getWindowHandles();
 	    Iterator<String>it=S1.iterator();
@@ -662,7 +791,7 @@ public class InstagramDashBoardSortByPage extends BasePage{
 	    helper.highLightElement(driver, Last_Seen_childWindow);
 	    String lastSeenDate = Last_Seen_childWindow.getText();
 	    System.out.println("Last_Seen_childWindow : " + lastSeenDate);
-	    Reporter.log("<B><font color = 'red'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+	    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
 	    
 	    driver.close();
 	    
@@ -679,7 +808,7 @@ public class InstagramDashBoardSortByPage extends BasePage{
 			}
 		//	System.out.println("lastseen Date in Newest: " + joinString);
 		Assert.assertEquals(imageDate, joinString);
-		Reporter.log("<B><font color = 'red'> ==> -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
 
 		}
 		catch(Exception e) {
@@ -700,6 +829,19 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		helper.Scrollintoview(showAnalytics_Button10);
 		helper.waitFor(showAnalytics_Button10);
 		helper.highLightElement(driver, showAnalytics_Button10);
+		
+		String linkText = showAnalytics_Button10.getAttribute("href");
+		System.out.println("linkText : " + linkText);
+		
+		String idString = null;
+			
+			String[] splitStringid = linkText.split("/");
+			for(int i=0;i<splitStringid.length;i++) {
+				String actualDate=splitStringid[splitStringid.length-1]; 
+				System.out.println("actualDate : " + actualDate);
+				Reporter.log("<B><font color = 'blue'> ==> -</font> ID of the 10th Ad = " + actualDate);
+				break;
+			}
 		helper.jsCLick(showAnalytics_Button10);
 		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
 		
@@ -748,13 +890,27 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		helper.highLightElement(driver, current_date11);
 		String imageDate=current_date11.getText();
 		System.out.println("currentDatenewest : " + imageDate);
-		Reporter.log("<B><font color = 'red'> ==> -</font> CurrentDatenewest Image in Instagram DashBoard= " + imageDate);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDatenewest Image in Instagram DashBoard= " + imageDate);
 		
 		helper.Scrollintoview(showAnalytics_Button11);
 		helper.waitFor(showAnalytics_Button11);
 		helper.highLightElement(driver, showAnalytics_Button11);
+		
+		String linkText = showAnalytics_Button11.getAttribute("href");
+		System.out.println("linkText : " + linkText);
+		
+		String idString = null;
+			
+			String[] splitStringid = linkText.split("/");
+			for(int i=0;i<splitStringid.length;i++) {
+				String actualDate=splitStringid[splitStringid.length-1]; 
+				System.out.println("actualDate : " + actualDate);
+				Reporter.log("<B><font color = 'blue'> ==> -</font> ID of the 11th Ad = " + actualDate);
+				break;
+			}
+			
 		helper.jsCLick(showAnalytics_Button11);
-		Reporter.log("<B><font color = 'red'> ==> -</font> Clicked on showAnalytics Button");
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
 		
 		Set<String> S1=driver.getWindowHandles();
 	    Iterator<String>it=S1.iterator();
@@ -768,7 +924,7 @@ public class InstagramDashBoardSortByPage extends BasePage{
 	    helper.highLightElement(driver, Last_Seen_childWindow);
 	    String lastSeenDate = Last_Seen_childWindow.getText();
 	    System.out.println("Last_Seen_childWindow : " + lastSeenDate);
-	    Reporter.log("<B><font color = 'red'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+	    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
 	    
 	    driver.close();
 	    
@@ -785,7 +941,7 @@ public class InstagramDashBoardSortByPage extends BasePage{
 			}
 		//	System.out.println("lastseen Date in Newest: " + joinString);
 		Assert.assertEquals(imageDate, joinString);
-		Reporter.log("<B><font color = 'red'> ==> -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
 
 		}
 		catch(Exception e) {
@@ -806,6 +962,19 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		helper.Scrollintoview(showAnalytics_Button12);
 		helper.waitFor(showAnalytics_Button12);
 		helper.highLightElement(driver, showAnalytics_Button12);
+		
+		String linkText = showAnalytics_Button12.getAttribute("href");
+		System.out.println("linkText : " + linkText);
+		
+		String idString = null;
+			
+			String[] splitStringid = linkText.split("/");
+			for(int i=0;i<splitStringid.length;i++) {
+				String actualDate=splitStringid[splitStringid.length-1]; 
+				System.out.println("actualDate : " + actualDate);
+				Reporter.log("<B><font color = 'blue'> ==> -</font> ID of the 12th Ad = " + actualDate);
+				break;
+			}
 		helper.jsCLick(showAnalytics_Button12);
 		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
 		
@@ -854,13 +1023,26 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		helper.highLightElement(driver, current_date13);
 		String imageDate=current_date13.getText();
 		System.out.println("imageDate : " + imageDate);
-		Reporter.log("<B><font color = 'red'> ==> -</font> CurrentDatenewest Image in Instagram DashBoard= " + imageDate);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDatenewest Image in Instagram DashBoard= " + imageDate);
 		
 		helper.Scrollintoview(showAnalytics_Button13);
 		helper.waitFor(showAnalytics_Button13);
 		helper.highLightElement(driver, showAnalytics_Button13);
+		
+		String linkText = showAnalytics_Button13.getAttribute("href");
+		System.out.println("linkText : " + linkText);
+		
+		String idString = null;
+			
+			String[] splitStringid = linkText.split("/");
+			for(int i=0;i<splitStringid.length;i++) {
+				String actualDate=splitStringid[splitStringid.length-1]; 
+				System.out.println("actualDate : " + actualDate);
+				Reporter.log("<B><font color = 'blue'> ==> -</font> ID of the 13th Ad = " + actualDate);
+				break;
+			}
 		helper.jsCLick(showAnalytics_Button13);
-		Reporter.log("<B><font color = 'red'> ==> -</font> Clicked on showAnalytics Button");
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
 		
 		Set<String> S1=driver.getWindowHandles();
 	    Iterator<String>it=S1.iterator();
@@ -874,7 +1056,7 @@ public class InstagramDashBoardSortByPage extends BasePage{
 	    helper.highLightElement(driver, Last_Seen_childWindow);
 	    String lastSeenDate = Last_Seen_childWindow.getText();
 	    System.out.println("Last_Seen_childWindow : " + lastSeenDate);
-	    Reporter.log("<B><font color = 'red'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+	    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
 	    
 	    driver.close();
 	    
@@ -891,7 +1073,7 @@ public class InstagramDashBoardSortByPage extends BasePage{
 			}
 		//	System.out.println("lastseen Date in Newest: " + joinString);
 		Assert.assertEquals(imageDate, joinString);
-		Reporter.log("<B><font color = 'red'> ==> -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
 
 		}
 		catch(Exception e) {
@@ -912,6 +1094,19 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		helper.Scrollintoview(showAnalytics_Button14);
 		helper.waitFor(showAnalytics_Button14);
 		helper.highLightElement(driver, showAnalytics_Button14);
+		
+		String linkText = showAnalytics_Button14.getAttribute("href");
+		System.out.println("linkText : " + linkText);
+		
+		String idString = null;
+			
+			String[] splitStringid = linkText.split("/");
+			for(int i=0;i<splitStringid.length;i++) {
+				String actualDate=splitStringid[splitStringid.length-1]; 
+				System.out.println("actualDate : " + actualDate);
+				Reporter.log("<B><font color = 'blue'> ==> -</font> ID of the 14th Ad = " + actualDate);
+				break;
+			}
 		helper.jsCLick(showAnalytics_Button14);
 		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
 		
@@ -960,13 +1155,26 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		helper.highLightElement(driver, current_date15);
 		String imageDate=current_date15.getText();
 		System.out.println("currentDatenewest : " + imageDate);
-		Reporter.log("<B><font color = 'red'> ==> -</font> CurrentDatenewest Image in Instagram DashBoard= " + imageDate);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDatenewest Image in Instagram DashBoard= " + imageDate);
 		
 		helper.Scrollintoview(showAnalytics_Button15);
 		helper.waitFor(showAnalytics_Button15);
 		helper.highLightElement(driver, showAnalytics_Button15);
+		
+		String linkText = showAnalytics_Button15.getAttribute("href");
+		System.out.println("linkText : " + linkText);
+		
+		String idString = null;
+			
+			String[] splitStringid = linkText.split("/");
+			for(int i=0;i<splitStringid.length;i++) {
+				String actualDate=splitStringid[splitStringid.length-1]; 
+				System.out.println("actualDate : " + actualDate);
+				Reporter.log("<B><font color = 'blue'> ==> -</font> ID of the 15th Ad = " + actualDate);
+				break;
+			}
 		helper.jsCLick(showAnalytics_Button15);
-		Reporter.log("<B><font color = 'red'> ==> -</font> Clicked on showAnalytics Button");
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
 		
 		Set<String> S1=driver.getWindowHandles();
 	    Iterator<String>it=S1.iterator();
@@ -980,7 +1188,7 @@ public class InstagramDashBoardSortByPage extends BasePage{
 	    helper.highLightElement(driver, Last_Seen_childWindow);
 	    String lastSeenDate = Last_Seen_childWindow.getText();
 	    System.out.println("Last_Seen_childWindow : " + lastSeenDate);
-	    Reporter.log("<B><font color = 'red'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+	    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
 	    
 	    driver.close();
 	    
@@ -997,13 +1205,16 @@ public class InstagramDashBoardSortByPage extends BasePage{
 			}
 		//	System.out.println("lastseen Date in Newest: " + joinString);
 		Assert.assertEquals(imageDate, joinString);
-		Reporter.log("<B><font color = 'red'> ==> -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
 
 		}
 		catch(Exception e) {
 			 Reporter.log("<B><font color = 'orange'> Step 6 -</font> Oops! Looks like we don't have data for this search criteria yet.");
 		}
-		/*		Reporter.log("<B><font color = 'green'> LastSeen field -</font>");
+	/*	
+		
+		Reporter.log("");
+		Reporter.log("<B><font color = 'green'> LastSeen field -</font>");
 
 	    //last seen
 	    
@@ -1035,20 +1246,24 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		helper.jsCLick(toatal_Count_Ads);
 		String Total_Ads_Count_lastseen=toatal_Count_Ads.getText();
 		Reporter.log("<B><font color = 'orange'> Step 5 -</font> Total_Ads_Count_lastseen= " + Total_Ads_Count_lastseen);
-		//helper.waitForPageToLoad();
+		helper.waitForPageToLoad();
 		
-		helper.waitFor(current_date);
+		Reporter.log("");
+		Reporter.log("<B><font color = 'Blue-Violet'> 1st Ad -</font> ");
+		
+		helper.Scrollintoview(current_date1);
+		helper.waitFor(current_date1);
 		try {
-		helper.highLightElement(driver, current_date);
-		String currentDateLatest=current_date.getText();
-		System.out.println("currentDateLatest : " + currentDateLatest);
-		Reporter.log("<B><font color = 'orange'> Step 6 -</font> CurrentDateLatest Image in Instagram DashBoard = " + currentDateLatest);
+		helper.highLightElement(driver, current_date1);
+		String imageDate=current_date1.getText();
+		System.out.println("currentDateLatest : " + imageDate);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDateLatest Image in Instagram DashBoard = " + imageDate);
 		
 		helper.Scrollintoview(showAnalytics_Button1);
 		helper.waitFor(showAnalytics_Button1);
 		helper.highLightElement(driver, showAnalytics_Button1);
 		helper.jsCLick(showAnalytics_Button1);
-		Reporter.log("<B><font color = 'orange'> Step 7 -</font> Clicked on showAnalytics Button");
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
 		
 		Set<String> S2=driver.getWindowHandles();
 	    Iterator<String>it1=S2.iterator();
@@ -1057,34 +1272,729 @@ public class InstagramDashBoardSortByPage extends BasePage{
 	    
 	    driver.switchTo().window(child1);
 	    
-	  //  helper.waitForPageToLoad();
+	    helper.waitForPageToLoad();
 	    helper.waitFor(Last_Seen_childWindow);
 	    helper.highLightElement(driver, Last_Seen_childWindow);
 	    String lastSeenDate1 = Last_Seen_childWindow.getText();
 	    System.out.println("Last_Seen_childWindow : " + lastSeenDate1 );
-	    Reporter.log("<B><font color = 'orange'> Step 8 -</font> Clicked on lastSeenDate1 = " +  lastSeenDate1);
+	    Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on lastSeenDate1 = " +  lastSeenDate1);
 	    
 	    driver.close();
 	    
 	    driver.switchTo().window(parent1);
 	    
-	    	String joinString1 = null;
+	    	String joinString = null;
 			
 			String[] splitString1 = lastSeenDate1.split(" ");
 			for(int i=0;i<splitString1.length-2;i++) {
 				String actualDate=splitString1[i]; 
-				joinString1= splitString1[i+1]+" "+ splitString1[i]+" " + splitString1[i+2];
+				joinString= splitString1[i+1]+" "+ splitString1[i]+" " + splitString1[i+2];
 			//	System.out.println("splitString : " + splitString[i]);
 			//	System.out.println("lastseen Date in LastSeen: " + joinString1);
 			}
-		//	System.out.println("lastseen Date in LastSeen: " + joinString1);
-		Assert.assertEquals(currentDateLatest, joinString1);
+			System.out.println("lastseen Date in LastSeen: " + joinString);
+		Assert.assertEquals(imageDate, joinString);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
+
 		}
 		catch (Exception e) {
 			 Reporter.log("<B><font color = 'orange'> Step 6 -</font> Oops! Looks like we don't have data for this search criteria yet.");
 		}
 		
-		//running longest
+		Reporter.log("");
+		Reporter.log("<B><font color = 'Blue-Violet'> 2nd Ad -</font> ");
+		
+		helper.Scrollintoview(current_date2);
+		helper.waitFor(current_date2);
+		try {
+		helper.highLightElement(driver, current_date2);
+		String imageDate=current_date2.getText();
+		System.out.println("currentDateLatest : " + imageDate);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDateLatest Image in Instagram DashBoard = " + imageDate);
+		
+		helper.Scrollintoview(showAnalytics_Button2);
+		helper.waitFor(showAnalytics_Button2);
+		helper.highLightElement(driver, showAnalytics_Button2);
+		helper.jsCLick(showAnalytics_Button2);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
+		
+		Set<String> S2=driver.getWindowHandles();
+	    Iterator<String>it1=S2.iterator();
+	    String parent1=it1.next();
+	    String child1=it1.next();
+	    
+	    driver.switchTo().window(child1);
+	    
+	    helper.waitForPageToLoad();
+	    helper.waitFor(Last_Seen_childWindow);
+	    helper.highLightElement(driver, Last_Seen_childWindow);
+	    String lastSeenDate1 = Last_Seen_childWindow.getText();
+	    System.out.println("Last_Seen_childWindow : " + lastSeenDate1 );
+	    Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on lastSeenDate1 = " +  lastSeenDate1);
+	    
+	    driver.close();
+	    
+	    driver.switchTo().window(parent1);
+	    
+	    	String joinString = null;
+			
+			String[] splitString1 = lastSeenDate1.split(" ");
+			for(int i=0;i<splitString1.length-2;i++) {
+				String actualDate=splitString1[i]; 
+				joinString= splitString1[i+1]+" "+ splitString1[i]+" " + splitString1[i+2];
+			//	System.out.println("splitString : " + splitString[i]);
+			//	System.out.println("lastseen Date in LastSeen: " + joinString1);
+			}
+			System.out.println("lastseen Date in LastSeen: " + joinString);
+		Assert.assertEquals(imageDate, joinString);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
+
+		}
+		catch (Exception e) {
+			 Reporter.log("<B><font color = 'orange'> Step 6 -</font> Oops! Looks like we don't have data for this search criteria yet.");
+		}
+		
+
+		Reporter.log("");
+		Reporter.log("<B><font color = 'Blue-Violet'> 3rd Ad -</font> ");
+		
+		helper.Scrollintoview(current_date3);
+		helper.waitFor(current_date3);
+		try {
+		helper.highLightElement(driver, current_date3);
+		String imageDate=current_date3.getText();
+		System.out.println("currentDateLatest : " + imageDate);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDateLatest Image in Instagram DashBoard = " + imageDate);
+		
+		helper.Scrollintoview(showAnalytics_Button3);
+		helper.waitFor(showAnalytics_Button3);
+		helper.highLightElement(driver, showAnalytics_Button3);
+		helper.jsCLick(showAnalytics_Button3);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
+		
+		Set<String> S2=driver.getWindowHandles();
+	    Iterator<String>it1=S2.iterator();
+	    String parent1=it1.next();
+	    String child1=it1.next();
+	    
+	    driver.switchTo().window(child1);
+	    
+	    helper.waitForPageToLoad();
+	    helper.waitFor(Last_Seen_childWindow);
+	    helper.highLightElement(driver, Last_Seen_childWindow);
+	    String lastSeenDate1 = Last_Seen_childWindow.getText();
+	    System.out.println("Last_Seen_childWindow : " + lastSeenDate1 );
+	    Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on lastSeenDate1 = " +  lastSeenDate1);
+	    
+	    driver.close();
+	    
+	    driver.switchTo().window(parent1);
+	    
+	    	String joinString = null;
+			
+			String[] splitString1 = lastSeenDate1.split(" ");
+			for(int i=0;i<splitString1.length-2;i++) {
+				String actualDate=splitString1[i]; 
+				joinString= splitString1[i+1]+" "+ splitString1[i]+" " + splitString1[i+2];
+			//	System.out.println("splitString : " + splitString[i]);
+			//	System.out.println("lastseen Date in LastSeen: " + joinString1);
+			}
+			System.out.println("lastseen Date in LastSeen: " + joinString);
+		Assert.assertEquals(imageDate, joinString);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
+
+		}
+		catch (Exception e) {
+			 Reporter.log("<B><font color = 'orange'> Step 6 -</font> Oops! Looks like we don't have data for this search criteria yet.");
+		}
+		
+
+		Reporter.log("");
+		Reporter.log("<B><font color = 'Blue-Violet'> 4th Ad -</font> ");
+		
+		helper.Scrollintoview(current_date4);
+		helper.waitFor(current_date4);
+		try {
+		helper.highLightElement(driver, current_date4);
+		String imageDate=current_date4.getText();
+		System.out.println("currentDateLatest : " + imageDate);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDateLatest Image in Instagram DashBoard = " + imageDate);
+		
+		helper.Scrollintoview(showAnalytics_Button4);
+		helper.waitFor(showAnalytics_Button4);
+		helper.highLightElement(driver, showAnalytics_Button4);
+		helper.jsCLick(showAnalytics_Button4);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
+		
+		Set<String> S2=driver.getWindowHandles();
+	    Iterator<String>it1=S2.iterator();
+	    String parent1=it1.next();
+	    String child1=it1.next();
+	    
+	    driver.switchTo().window(child1);
+	    
+	    helper.waitForPageToLoad();
+	    helper.waitFor(Last_Seen_childWindow);
+	    helper.highLightElement(driver, Last_Seen_childWindow);
+	    String lastSeenDate1 = Last_Seen_childWindow.getText();
+	    System.out.println("Last_Seen_childWindow : " + lastSeenDate1 );
+	    Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on lastSeenDate1 = " +  lastSeenDate1);
+	    
+	    driver.close();
+	    
+	    driver.switchTo().window(parent1);
+	    
+	    	String joinString = null;
+			
+			String[] splitString1 = lastSeenDate1.split(" ");
+			for(int i=0;i<splitString1.length-2;i++) {
+				String actualDate=splitString1[i]; 
+				joinString= splitString1[i+1]+" "+ splitString1[i]+" " + splitString1[i+2];
+			//	System.out.println("splitString : " + splitString[i]);
+			//	System.out.println("lastseen Date in LastSeen: " + joinString1);
+			}
+			System.out.println("lastseen Date in LastSeen: " + joinString);
+		Assert.assertEquals(imageDate, joinString);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
+
+		}
+		catch (Exception e) {
+			 Reporter.log("<B><font color = 'orange'> Step 6 -</font> Oops! Looks like we don't have data for this search criteria yet.");
+		}
+		
+
+		Reporter.log("");
+		Reporter.log("<B><font color = 'Blue-Violet'> 5th Ad -</font> ");
+		
+		helper.Scrollintoview(current_date5);
+		helper.waitFor(current_date5);
+		try {
+		helper.highLightElement(driver, current_date5);
+		String imageDate=current_date5.getText();
+		System.out.println("currentDateLatest : " + imageDate);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDateLatest Image in Instagram DashBoard = " + imageDate);
+		
+		helper.Scrollintoview(showAnalytics_Button5);
+		helper.waitFor(showAnalytics_Button5);
+		helper.highLightElement(driver, showAnalytics_Button5);
+		helper.jsCLick(showAnalytics_Button5);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
+		
+		Set<String> S2=driver.getWindowHandles();
+	    Iterator<String>it1=S2.iterator();
+	    String parent1=it1.next();
+	    String child1=it1.next();
+	    
+	    driver.switchTo().window(child1);
+	    
+	    helper.waitForPageToLoad();
+	    helper.waitFor(Last_Seen_childWindow);
+	    helper.highLightElement(driver, Last_Seen_childWindow);
+	    String lastSeenDate1 = Last_Seen_childWindow.getText();
+	    System.out.println("Last_Seen_childWindow : " + lastSeenDate1 );
+	    Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on lastSeenDate = " +  lastSeenDate1);
+	    
+	    driver.close();
+	    
+	    driver.switchTo().window(parent1);
+	    
+	    	String joinString = null;
+			
+			String[] splitString1 = lastSeenDate1.split(" ");
+			for(int i=0;i<splitString1.length-2;i++) {
+				String actualDate=splitString1[i]; 
+				joinString= splitString1[i+1]+" "+ splitString1[i]+" " + splitString1[i+2];
+			//	System.out.println("splitString : " + splitString[i]);
+			//	System.out.println("lastseen Date in LastSeen: " + joinString1);
+			}
+			System.out.println("lastseen Date in LastSeen: " + joinString);
+		Assert.assertEquals(imageDate, joinString);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
+
+		}
+		catch (Exception e) {
+			 Reporter.log("<B><font color = 'orange'> Step 6 -</font> Oops! Looks like we don't have data for this search criteria yet.");
+		}
+		
+
+		Reporter.log("");
+		Reporter.log("<B><font color = 'Blue-Violet'> 6th Ad -</font> ");
+		
+		helper.Scrollintoview(current_date6);
+		helper.waitFor(current_date6);
+		try {
+		helper.highLightElement(driver, current_date6);
+		String imageDate=current_date6.getText();
+		System.out.println("currentDateLatest : " + imageDate);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDateLatest Image in Instagram DashBoard = " + imageDate);
+		
+		helper.Scrollintoview(showAnalytics_Button6);
+		helper.waitFor(showAnalytics_Button6);
+		helper.highLightElement(driver, showAnalytics_Button6);
+		helper.jsCLick(showAnalytics_Button6);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
+		
+		Set<String> S2=driver.getWindowHandles();
+	    Iterator<String>it1=S2.iterator();
+	    String parent1=it1.next();
+	    String child1=it1.next();
+	    
+	    driver.switchTo().window(child1);
+	    
+	    helper.waitForPageToLoad();
+	    helper.waitFor(Last_Seen_childWindow);
+	    helper.highLightElement(driver, Last_Seen_childWindow);
+	    String lastSeenDate1 = Last_Seen_childWindow.getText();
+	    System.out.println("Last_Seen_childWindow : " + lastSeenDate1 );
+	    Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on lastSeenDate = " +  lastSeenDate1);
+	    
+	    driver.close();
+	    
+	    driver.switchTo().window(parent1);
+	    
+	    	String joinString = null;
+			
+			String[] splitString1 = lastSeenDate1.split(" ");
+			for(int i=0;i<splitString1.length-2;i++) {
+				String actualDate=splitString1[i]; 
+				joinString= splitString1[i+1]+" "+ splitString1[i]+" " + splitString1[i+2];
+			//	System.out.println("splitString : " + splitString[i]);
+			//	System.out.println("lastseen Date in LastSeen: " + joinString1);
+			}
+			System.out.println("lastseen Date in LastSeen: " + joinString);
+		Assert.assertEquals(imageDate, joinString);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
+
+		}
+		catch (Exception e) {
+			 Reporter.log("<B><font color = 'orange'> Step 6 -</font> Oops! Looks like we don't have data for this search criteria yet.");
+		}
+		
+
+		Reporter.log("");
+		Reporter.log("<B><font color = 'Blue-Violet'> 7th Ad -</font> ");
+		
+		helper.Scrollintoview(current_date7);
+		helper.waitFor(current_date7);
+		try {
+		helper.highLightElement(driver, current_date7);
+		String imageDate=current_date7.getText();
+		System.out.println("currentDateLatest : " + imageDate);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDateLatest Image in Instagram DashBoard = " + imageDate);
+		
+		helper.Scrollintoview(showAnalytics_Button7);
+		helper.waitFor(showAnalytics_Button7);
+		helper.highLightElement(driver, showAnalytics_Button7);
+		helper.jsCLick(showAnalytics_Button7);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
+		
+		Set<String> S2=driver.getWindowHandles();
+	    Iterator<String>it1=S2.iterator();
+	    String parent1=it1.next();
+	    String child1=it1.next();
+	    
+	    driver.switchTo().window(child1);
+	    
+	    helper.waitForPageToLoad();
+	    helper.waitFor(Last_Seen_childWindow);
+	    helper.highLightElement(driver, Last_Seen_childWindow);
+	    String lastSeenDate1 = Last_Seen_childWindow.getText();
+	    System.out.println("Last_Seen_childWindow : " + lastSeenDate1 );
+	    Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on lastSeenDate = " +  lastSeenDate1);
+	    
+	    driver.close();
+	    
+	    driver.switchTo().window(parent1);
+	    
+	    	String joinString = null;
+			
+			String[] splitString1 = lastSeenDate1.split(" ");
+			for(int i=0;i<splitString1.length-2;i++) {
+				String actualDate=splitString1[i]; 
+				joinString= splitString1[i+1]+" "+ splitString1[i]+" " + splitString1[i+2];
+			//	System.out.println("splitString : " + splitString[i]);
+			//	System.out.println("lastseen Date in LastSeen: " + joinString1);
+			}
+			System.out.println("lastseen Date in LastSeen: " + joinString);
+		Assert.assertEquals(imageDate, joinString);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
+
+		}
+		catch (Exception e) {
+			 Reporter.log("<B><font color = 'orange'> Step 6 -</font> Oops! Looks like we don't have data for this search criteria yet.");
+		}
+		
+		Reporter.log("");
+		Reporter.log("<B><font color = 'Blue-Violet'> 8th Ad -</font> ");
+		
+		helper.Scrollintoview(current_date8);
+		helper.waitFor(current_date8);
+		try {
+		helper.highLightElement(driver, current_date8);
+		String imageDate=current_date8.getText();
+		System.out.println("currentDateLatest : " + imageDate);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDateLatest Image in Instagram DashBoard = " + imageDate);
+		
+		helper.Scrollintoview(showAnalytics_Button8);
+		helper.waitFor(showAnalytics_Button8);
+		helper.highLightElement(driver, showAnalytics_Button8);
+		helper.jsCLick(showAnalytics_Button8);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
+		
+		Set<String> S2=driver.getWindowHandles();
+	    Iterator<String>it1=S2.iterator();
+	    String parent1=it1.next();
+	    String child1=it1.next();
+	    
+	    driver.switchTo().window(child1);
+	    
+	    helper.waitForPageToLoad();
+	    helper.waitFor(Last_Seen_childWindow);
+	    helper.highLightElement(driver, Last_Seen_childWindow);
+	    String lastSeenDate1 = Last_Seen_childWindow.getText();
+	    System.out.println("Last_Seen_childWindow : " + lastSeenDate1 );
+	    Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on lastSeenDate = " +  lastSeenDate1);
+	    
+	    driver.close();
+	    
+	    driver.switchTo().window(parent1);
+	    
+	    	String joinString = null;
+			
+			String[] splitString1 = lastSeenDate1.split(" ");
+			for(int i=0;i<splitString1.length-2;i++) {
+				String actualDate=splitString1[i]; 
+				joinString= splitString1[i+1]+" "+ splitString1[i]+" " + splitString1[i+2];
+			//	System.out.println("splitString : " + splitString[i]);
+			//	System.out.println("lastseen Date in LastSeen: " + joinString1);
+			}
+			System.out.println("lastseen Date in LastSeen: " + joinString);
+		Assert.assertEquals(imageDate, joinString);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
+
+		}
+		catch (Exception e) {
+			 Reporter.log("<B><font color = 'orange'> Step 6 -</font> Oops! Looks like we don't have data for this search criteria yet.");
+		}
+		
+		Reporter.log("");
+		Reporter.log("<B><font color = 'Blue-Violet'> 9th Ad -</font> ");
+		
+		helper.Scrollintoview(current_date9);
+		helper.waitFor(current_date9);
+		try {
+		helper.highLightElement(driver, current_date9);
+		String imageDate=current_date9.getText();
+		System.out.println("currentDateLatest : " + imageDate);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDateLatest Image in Instagram DashBoard = " + imageDate);
+		
+		helper.Scrollintoview(showAnalytics_Button9);
+		helper.waitFor(showAnalytics_Button9);
+		helper.highLightElement(driver, showAnalytics_Button9);
+		helper.jsCLick(showAnalytics_Button9);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
+		
+		Set<String> S2=driver.getWindowHandles();
+	    Iterator<String>it1=S2.iterator();
+	    String parent1=it1.next();
+	    String child1=it1.next();
+	    
+	    driver.switchTo().window(child1);
+	    
+	    helper.waitForPageToLoad();
+	    helper.waitFor(Last_Seen_childWindow);
+	    helper.highLightElement(driver, Last_Seen_childWindow);
+	    String lastSeenDate1 = Last_Seen_childWindow.getText();
+	    System.out.println("Last_Seen_childWindow : " + lastSeenDate1 );
+	    Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on lastSeenDate = " +  lastSeenDate1);
+	    
+	    driver.close();
+	    
+	    driver.switchTo().window(parent1);
+	    
+	    	String joinString = null;
+			
+			String[] splitString1 = lastSeenDate1.split(" ");
+			for(int i=0;i<splitString1.length-2;i++) {
+				String actualDate=splitString1[i]; 
+				joinString= splitString1[i+1]+" "+ splitString1[i]+" " + splitString1[i+2];
+			//	System.out.println("splitString : " + splitString[i]);
+			//	System.out.println("lastseen Date in LastSeen: " + joinString1);
+			}
+			System.out.println("lastseen Date in LastSeen: " + joinString);
+		Assert.assertEquals(imageDate, joinString);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
+
+		}
+		catch (Exception e) {
+			 Reporter.log("<B><font color = 'orange'> Step 6 -</font> Oops! Looks like we don't have data for this search criteria yet.");
+		}
+		
+		Reporter.log("");
+		Reporter.log("<B><font color = 'Blue-Violet'> 11th Ad -</font> ");
+		
+		helper.Scrollintoview(current_date11);
+		helper.waitFor(current_date11);
+		try {
+		helper.highLightElement(driver, current_date11);
+		String imageDate=current_date11.getText();
+		System.out.println("currentDateLatest : " + imageDate);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDateLatest Image in Instagram DashBoard = " + imageDate);
+		
+		helper.Scrollintoview(showAnalytics_Button11);
+		helper.waitFor(showAnalytics_Button11);
+		helper.highLightElement(driver, showAnalytics_Button11);
+		helper.jsCLick(showAnalytics_Button11);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
+		
+		Set<String> S2=driver.getWindowHandles();
+	    Iterator<String>it1=S2.iterator();
+	    String parent1=it1.next();
+	    String child1=it1.next();
+	    
+	    driver.switchTo().window(child1);
+	    
+	    helper.waitForPageToLoad();
+	    helper.waitFor(Last_Seen_childWindow);
+	    helper.highLightElement(driver, Last_Seen_childWindow);
+	    String lastSeenDate1 = Last_Seen_childWindow.getText();
+	    System.out.println("Last_Seen_childWindow : " + lastSeenDate1 );
+	    Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on lastSeenDate = " +  lastSeenDate1);
+	    
+	    driver.close();
+	    
+	    driver.switchTo().window(parent1);
+	    
+	    	String joinString = null;
+			
+			String[] splitString1 = lastSeenDate1.split(" ");
+			for(int i=0;i<splitString1.length-2;i++) {
+				String actualDate=splitString1[i]; 
+				joinString= splitString1[i+1]+" "+ splitString1[i]+" " + splitString1[i+2];
+			//	System.out.println("splitString : " + splitString[i]);
+			//	System.out.println("lastseen Date in LastSeen: " + joinString1);
+			}
+			System.out.println("lastseen Date in LastSeen: " + joinString);
+		Assert.assertEquals(imageDate, joinString);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
+
+		}
+		catch (Exception e) {
+			 Reporter.log("<B><font color = 'orange'> Step 6 -</font> Oops! Looks like we don't have data for this search criteria yet.");
+		}
+		
+		Reporter.log("");
+		Reporter.log("<B><font color = 'Blue-Violet'> 12th Ad -</font> ");
+		
+		helper.Scrollintoview(current_date12);
+		helper.waitFor(current_date12);
+		try {
+		helper.highLightElement(driver, current_date12);
+		String imageDate=current_date12.getText();
+		System.out.println("currentDateLatest : " + imageDate);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDateLatest Image in Instagram DashBoard = " + imageDate);
+		
+		helper.Scrollintoview(showAnalytics_Button12);
+		helper.waitFor(showAnalytics_Button12);
+		helper.highLightElement(driver, showAnalytics_Button12);
+		helper.jsCLick(showAnalytics_Button12);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
+		
+		Set<String> S2=driver.getWindowHandles();
+	    Iterator<String>it1=S2.iterator();
+	    String parent1=it1.next();
+	    String child1=it1.next();
+	    
+	    driver.switchTo().window(child1);
+	    
+	    helper.waitForPageToLoad();
+	    helper.waitFor(Last_Seen_childWindow);
+	    helper.highLightElement(driver, Last_Seen_childWindow);
+	    String lastSeenDate1 = Last_Seen_childWindow.getText();
+	    System.out.println("Last_Seen_childWindow : " + lastSeenDate1 );
+	    Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on lastSeenDate = " +  lastSeenDate1);
+	    
+	    driver.close();
+	    
+	    driver.switchTo().window(parent1);
+	    
+	    	String joinString = null;
+			
+			String[] splitString1 = lastSeenDate1.split(" ");
+			for(int i=0;i<splitString1.length-2;i++) {
+				String actualDate=splitString1[i]; 
+				joinString= splitString1[i+1]+" "+ splitString1[i]+" " + splitString1[i+2];
+			//	System.out.println("splitString : " + splitString[i]);
+			//	System.out.println("lastseen Date in LastSeen: " + joinString1);
+			}
+			System.out.println("lastseen Date in LastSeen: " + joinString);
+		Assert.assertEquals(imageDate, joinString);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
+
+		}
+		catch (Exception e) {
+			 Reporter.log("<B><font color = 'orange'> Step 6 -</font> Oops! Looks like we don't have data for this search criteria yet.");
+		}
+		
+		Reporter.log("");
+		Reporter.log("<B><font color = 'Blue-Violet'> 13th Ad -</font> ");
+		
+		helper.Scrollintoview(current_date13);
+		helper.waitFor(current_date13);
+		try {
+		helper.highLightElement(driver, current_date13);
+		String imageDate=current_date13.getText();
+		System.out.println("currentDateLatest : " + imageDate);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDateLatest Image in Instagram DashBoard = " + imageDate);
+		
+		helper.Scrollintoview(showAnalytics_Button13);
+		helper.waitFor(showAnalytics_Button13);
+		helper.highLightElement(driver, showAnalytics_Button13);
+		helper.jsCLick(showAnalytics_Button13);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
+		
+		Set<String> S2=driver.getWindowHandles();
+	    Iterator<String>it1=S2.iterator();
+	    String parent1=it1.next();
+	    String child1=it1.next();
+	    
+	    driver.switchTo().window(child1);
+	    
+	    helper.waitForPageToLoad();
+	    helper.waitFor(Last_Seen_childWindow);
+	    helper.highLightElement(driver, Last_Seen_childWindow);
+	    String lastSeenDate1 = Last_Seen_childWindow.getText();
+	    System.out.println("Last_Seen_childWindow : " + lastSeenDate1 );
+	    Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on lastSeenDate = " +  lastSeenDate1);
+	    
+	    driver.close();
+	    
+	    driver.switchTo().window(parent1);
+	    
+	    	String joinString = null;
+			
+			String[] splitString1 = lastSeenDate1.split(" ");
+			for(int i=0;i<splitString1.length-2;i++) {
+				String actualDate=splitString1[i]; 
+				joinString= splitString1[i+1]+" "+ splitString1[i]+" " + splitString1[i+2];
+			//	System.out.println("splitString : " + splitString[i]);
+			//	System.out.println("lastseen Date in LastSeen: " + joinString1);
+			}
+			System.out.println("lastseen Date in LastSeen: " + joinString);
+		Assert.assertEquals(imageDate, joinString);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
+
+		}
+		catch (Exception e) {
+			 Reporter.log("<B><font color = 'orange'> Step 6 -</font> Oops! Looks like we don't have data for this search criteria yet.");
+		}
+		
+		Reporter.log("");
+		Reporter.log("<B><font color = 'Blue-Violet'> 14th Ad -</font> ");
+		
+		helper.Scrollintoview(current_date14);
+		helper.waitFor(current_date14);
+		try {
+		helper.highLightElement(driver, current_date14);
+		String imageDate=current_date14.getText();
+		System.out.println("currentDateLatest : " + imageDate);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDateLatest Image in Instagram DashBoard = " + imageDate);
+		
+		helper.Scrollintoview(showAnalytics_Button14);
+		helper.waitFor(showAnalytics_Button14);
+		helper.highLightElement(driver, showAnalytics_Button14);
+		helper.jsCLick(showAnalytics_Button14);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
+		
+		Set<String> S2=driver.getWindowHandles();
+	    Iterator<String>it1=S2.iterator();
+	    String parent1=it1.next();
+	    String child1=it1.next();
+	    
+	    driver.switchTo().window(child1);
+	    
+	    helper.waitForPageToLoad();
+	    helper.waitFor(Last_Seen_childWindow);
+	    helper.highLightElement(driver, Last_Seen_childWindow);
+	    String lastSeenDate1 = Last_Seen_childWindow.getText();
+	    System.out.println("Last_Seen_childWindow : " + lastSeenDate1 );
+	    Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on lastSeenDate = " +  lastSeenDate1);
+	    
+	    driver.close();
+	    
+	    driver.switchTo().window(parent1);
+	    
+	    	String joinString = null;
+			
+			String[] splitString1 = lastSeenDate1.split(" ");
+			for(int i=0;i<splitString1.length-2;i++) {
+				String actualDate=splitString1[i]; 
+				joinString= splitString1[i+1]+" "+ splitString1[i]+" " + splitString1[i+2];
+			//	System.out.println("splitString : " + splitString[i]);
+			//	System.out.println("lastseen Date in LastSeen: " + joinString1);
+			}
+			System.out.println("lastseen Date in LastSeen: " + joinString);
+		Assert.assertEquals(imageDate, joinString);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
+
+		}
+		catch (Exception e) {
+			 Reporter.log("<B><font color = 'orange'> Step 6 -</font> Oops! Looks like we don't have data for this search criteria yet.");
+		}
+		
+		Reporter.log("");
+		Reporter.log("<B><font color = 'Blue-Violet'> 15th Ad -</font> ");
+		
+		helper.Scrollintoview(current_date15);
+		helper.waitFor(current_date15);
+		try {
+		helper.highLightElement(driver, current_date15);
+		String imageDate=current_date15.getText();
+		System.out.println("currentDateLatest : " + imageDate);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDateLatest Image in Instagram DashBoard = " + imageDate);
+		
+		helper.Scrollintoview(showAnalytics_Button15);
+		helper.waitFor(showAnalytics_Button15);
+		helper.highLightElement(driver, showAnalytics_Button15);
+		helper.jsCLick(showAnalytics_Button15);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
+		
+		Set<String> S2=driver.getWindowHandles();
+	    Iterator<String>it1=S2.iterator();
+	    String parent1=it1.next();
+	    String child1=it1.next();
+	    
+	    driver.switchTo().window(child1);
+	    
+	    helper.waitForPageToLoad();
+	    helper.waitFor(Last_Seen_childWindow);
+	    helper.highLightElement(driver, Last_Seen_childWindow);
+	    String lastSeenDate1 = Last_Seen_childWindow.getText();
+	    System.out.println("Last_Seen_childWindow : " + lastSeenDate1 );
+	    Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on lastSeenDate = " +  lastSeenDate1);
+	    
+	    driver.close();
+	    
+	    driver.switchTo().window(parent1);
+	    
+	    	String joinString = null;
+			
+			String[] splitString1 = lastSeenDate1.split(" ");
+			for(int i=0;i<splitString1.length-2;i++) {
+				String actualDate=splitString1[i]; 
+				joinString= splitString1[i+1]+" "+ splitString1[i]+" " + splitString1[i+2];
+			//	System.out.println("splitString : " + splitString[i]);
+			//	System.out.println("lastseen Date in LastSeen: " + joinString1);
+			}
+			System.out.println("lastseen Date in LastSeen: " + joinString);
+		Assert.assertEquals(imageDate, joinString);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
+
+		}
+		catch (Exception e) {
+			 Reporter.log("<B><font color = 'orange'> Step 6 -</font> Oops! Looks like we don't have data for this search criteria yet.");
+		}
+/*		//running longest
 		
 		Reporter.log("");
 		Reporter.log("<B><font color = 'green'> Running longest field -</font> ");
@@ -1120,10 +2030,10 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		
 		Reporter.log("");
 		Reporter.log("<B><font color = 'Blue-Violet'> --1st Ad-- -</font> ");
-		helper.waitFor(current_date);
+		helper.waitFor(current_date1);
 		try {
-		helper.highLightElement(driver, current_date);
-		String currentDate_runningLongest=current_date.getText();
+		helper.highLightElement(driver, current_date1);
+		String currentDate_runningLongest=current_date1.getText();
 		Reporter.log("<B><font color = 'blue'> ==> -</font>  RunningLongest Image Date in Instagram DashBoard= " + currentDate_runningLongest);
 		
 		helper.Scrollintoview(showAnalytics_Button1);
@@ -1159,10 +2069,10 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		Reporter.log("");
 		Reporter.log("<B><font color = 'Blue-Violet'> --2nd Ad-- -</font> ");
 		
-		helper.waitFor(current_date);
+		helper.waitFor(current_date1);
 		try {
-		helper.highLightElement(driver, current_date);
-		String currentDate_runningLongest=current_date.getText();
+		helper.highLightElement(driver, current_date1);
+		String currentDate_runningLongest=current_date1.getText();
 		Reporter.log("<B><font color = 'red'> ==> -</font> RunningLongest Image Date in Instagram DashBoard= " + currentDate_runningLongest);
 		
 		helper.Scrollintoview(showAnalytics_Button2);
@@ -1197,10 +2107,10 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		Reporter.log("");
 		Reporter.log("<B><font color = 'Blue-Violet'> --3rd Ad-- -</font> ");
 		
-		helper.waitFor(current_date);
+		helper.waitFor(current_date1);
 		try {
-		helper.highLightElement(driver, current_date);
-		String currentDate_runningLongest=current_date.getText();
+		helper.highLightElement(driver, current_date1);
+		String currentDate_runningLongest=current_date1.getText();
 		Reporter.log("<B><font color = 'blue'> ==> -</font> RunningLongest Image Date in Instagram DashBoard= " + currentDate_runningLongest);
 		
 		helper.Scrollintoview(showAnalytics_Button3);
@@ -1235,10 +2145,10 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		Reporter.log("");
 		Reporter.log("<B><font color = 'Blue-Violet'> --4th Ad-- -</font> ");
 		
-		helper.waitFor(current_date);
+		helper.waitFor(current_date1);
 		try {
-		helper.highLightElement(driver, current_date);
-		String currentDate_runningLongest=current_date.getText();
+		helper.highLightElement(driver, current_date1);
+		String currentDate_runningLongest=current_date1.getText();
 		Reporter.log("<B><font color = 'red'> ==> -</font> RunningLongest Image Date in Instagram DashBoard= " + currentDate_runningLongest);
 		
 		helper.Scrollintoview(showAnalytics_Button4);
@@ -1274,10 +2184,10 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		Reporter.log("");
 		Reporter.log("<B><font color = 'Blue-Violet'> --5th Ad-- -</font> ");
 		
-		helper.waitFor(current_date);
+		helper.waitFor(current_date1);
 		try {
-		helper.highLightElement(driver, current_date);
-		String currentDate_runningLongest=current_date.getText();
+		helper.highLightElement(driver, current_date1);
+		String currentDate_runningLongest=current_date1.getText();
 		Reporter.log("<B><font color = 'blue'> ==> -</font> RunningLongest Image Date in Instagram DashBoard= " + currentDate_runningLongest);
 		
 		helper.Scrollintoview(showAnalytics_Button5);
@@ -1313,10 +2223,10 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		Reporter.log("");
 		Reporter.log("<B><font color = 'Blue-Violet'> --6th Ad-- -</font> ");
 		
-		helper.waitFor(current_date);
+		helper.waitFor(current_date1);
 		try {
-		helper.highLightElement(driver, current_date);
-		String currentDate_runningLongest=current_date.getText();
+		helper.highLightElement(driver, current_date1);
+		String currentDate_runningLongest=current_date1.getText();
 		Reporter.log("<B><font color = 'red'> ==> -</font> RunningLongest Image Date in Instagram DashBoard= " + currentDate_runningLongest);
 		
 		helper.Scrollintoview(showAnalytics_Button6);
@@ -1352,10 +2262,10 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		Reporter.log("");
 		Reporter.log("<B><font color = 'Blue-Violet'> --7th Ad-- -</font> ");
 		
-		helper.waitFor(current_date);
+		helper.waitFor(current_date1);
 		try {
-		helper.highLightElement(driver, current_date);
-		String currentDate_runningLongest=current_date.getText();
+		helper.highLightElement(driver, current_date1);
+		String currentDate_runningLongest=current_date1.getText();
 		Reporter.log("<B><font color = 'blue'> ==> -</font> RunningLongest Image Date in Instagram DashBoard= " + currentDate_runningLongest);
 		
 		//
@@ -1392,10 +2302,10 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		Reporter.log("");
 		Reporter.log("<B><font color = 'Blue-Violet'> --8th Ad-- -</font> ");
 		
-		helper.waitFor(current_date);
+		helper.waitFor(current_date1);
 		try {
-		helper.highLightElement(driver, current_date);
-		String currentDate_runningLongest=current_date.getText();
+		helper.highLightElement(driver, current_date1);
+		String currentDate_runningLongest=current_date1.getText();
 		Reporter.log("<B><font color = 'red'> ==> -</font> RunningLongest Image Date in Instagram DashBoard= " + currentDate_runningLongest);
 		
 		helper.Scrollintoview(showAnalytics_Button8);
@@ -1430,10 +2340,10 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		
 		Reporter.log("");
 		Reporter.log("<B><font color = 'Blue-Violet'> --9th Ad-- -</font> ");
-		helper.waitFor(current_date);
+		helper.waitFor(current_date1);
 		try {
-		helper.highLightElement(driver, current_date);
-		String currentDate_runningLongest=current_date.getText();
+		helper.highLightElement(driver, current_date1);
+		String currentDate_runningLongest=current_date1.getText();
 		Reporter.log("<B><font color = 'blue'> ==> -</font> RunningLongest Image Date in Instagram DashBoard= " + currentDate_runningLongest);
 		
 		helper.Scrollintoview(showAnalytics_Button9);
@@ -1468,10 +2378,10 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		
 		Reporter.log("");
 		Reporter.log("<B><font color = 'Blue-Violet'> --10th Ad-- -</font> ");
-		helper.waitFor(current_date);
+		helper.waitFor(current_date1);
 		try {
-		helper.highLightElement(driver, current_date);
-		String currentDate_runningLongest=current_date.getText();
+		helper.highLightElement(driver, current_date1);
+		String currentDate_runningLongest=current_date1.getText();
 		Reporter.log("<B><font color = 'red'> ==> -</font> RunningLongest Image Date in Instagram DashBoard= " + currentDate_runningLongest);
 		
 		helper.Scrollintoview(showAnalytics_Button10);
@@ -1506,10 +2416,10 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		Reporter.log("");
 		Reporter.log("<B><font color = 'Blue-Violet'> --11th Ad-- -</font> ");
 		
-		helper.waitFor(current_date);
+		helper.waitFor(current_date1);
 		try {
-		helper.highLightElement(driver, current_date);
-		String currentDate_runningLongest=current_date.getText();
+		helper.highLightElement(driver, current_date1);
+		String currentDate_runningLongest=current_date1.getText();
 		Reporter.log("<B><font color = 'blue'> ==> -</font> RunningLongest Image Date in Instagram DashBoard= " + currentDate_runningLongest);
 		
 		helper.Scrollintoview(showAnalytics_Button10);
@@ -1544,10 +2454,10 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		
 		Reporter.log("");
 		Reporter.log("<B><font color = 'Blue-Violet'> --12th Ad-- -</font> ");
-		helper.waitFor(current_date);
+		helper.waitFor(current_date1);
 		try {
-		helper.highLightElement(driver, current_date);
-		String currentDate_runningLongest=current_date.getText();
+		helper.highLightElement(driver, current_date1);
+		String currentDate_runningLongest=current_date1.getText();
 		Reporter.log("<B><font color = 'red'> ==> -</font> RunningLongest Image Date in Instagram DashBoard= " + currentDate_runningLongest);
 		
 		helper.Scrollintoview(showAnalytics_Button12);
@@ -1582,10 +2492,10 @@ public class InstagramDashBoardSortByPage extends BasePage{
 	
 		Reporter.log("");
 		Reporter.log("<B><font color = 'Blue-Violet'> --13th Ad-- -</font> ");
-		helper.waitFor(current_date);
+		helper.waitFor(current_date1);
 		try {
-		helper.highLightElement(driver, current_date);
-		String currentDate_runningLongest=current_date.getText();
+		helper.highLightElement(driver, current_date1);
+		String currentDate_runningLongest=current_date1.getText();
 		Reporter.log("<B><font color = 'blue'> ==> -</font> RunningLongest Image Date in Instagram DashBoard= " + currentDate_runningLongest);
 		
 		helper.Scrollintoview(showAnalytics_Button13);
@@ -1620,10 +2530,10 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		Reporter.log("");
 		Reporter.log("<B><font color = 'Blue-Violet'> --14th Ad-- -</font> ");
 		
-		helper.waitFor(current_date);
+		helper.waitFor(current_date1);
 		try {
-		helper.highLightElement(driver, current_date);
-		String currentDate_runningLongest=current_date.getText();
+		helper.highLightElement(driver, current_date1);
+		String currentDate_runningLongest=current_date1.getText();
 		Reporter.log("<B><font color = 'red'> ==> -</font> RunningLongest Image Date in Instagram DashBoard= " + currentDate_runningLongest);
 		
 		helper.Scrollintoview(showAnalytics_Button14);
@@ -1658,10 +2568,10 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		
 		Reporter.log("");
 		Reporter.log("<B><font color = 'Blue-Violet'> --15th Ad-- -</font> ");
-		helper.waitFor(current_date);
+		helper.waitFor(current_date1);
 		try {
-		helper.highLightElement(driver, current_date);
-		String currentDate_runningLongest=current_date.getText();
+		helper.highLightElement(driver, current_date1);
+		String currentDate_runningLongest=current_date1.getText();
 		Reporter.log("<B><font color = 'blue'> ==> -</font> RunningLongest Image Date in Instagram DashBoard= " + currentDate_runningLongest);
 		
 		helper.Scrollintoview(showAnalytics_Button15);
@@ -1694,10 +2604,10 @@ public class InstagramDashBoardSortByPage extends BasePage{
 			Reporter.log("<B><font color = 'green'> Running longest field -</font> ");
 		}
 		
-		helper.waitFor(current_date);
+		helper.waitFor(current_date1);
 		try {
-		helper.highLightElement(driver, current_date);
-		String currentDate_runningLongest=current_date.getText();
+		helper.highLightElement(driver, current_date1);
+		String currentDate_runningLongest=current_date1.getText();
 		Reporter.log("<B><font color = 'orange'> Step 6 -</font> RunningLongest Image Date in Instagram DashBoard= " + currentDate_runningLongest);
 		
 		helper.Scrollintoview(showAnalytics_Button15);
@@ -1729,7 +2639,10 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		catch (Exception e) {
 			Reporter.log("<B><font color = 'green'> Running longest field -</font> ");
 		}
-	/*    Reporter.log("<B><font color = 'green'> Domain Register date field -</font> ");
+		
+	 
+		Reporter.log("");
+		Reporter.log("<B><font color = 'green'> Domain Register date field -</font> ");
 	    
 	    //domain register date
 	    
@@ -1763,16 +2676,21 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		Reporter.log("<B><font color = 'orange'> Step 5 -</font> Total_Ads_Count_newest= " + Total_Ads_Count_DomainRegDate);
 	//	helper.waitForPageToLoad();
 		
-		helper.waitFor(current_date);
-		helper.highLightElement(driver, current_date);
-		String currentDate_DomainRegDate=current_date.getText();
-		Reporter.log("<B><font color = 'orange'> Step 6 -</font> CurrentDate_DomainRegDate Image in Instagram DashBoard= " + currentDate_DomainRegDate);
+		Reporter.log("");
+		Reporter.log("<B><font color = 'Blue-Violet'> --1st Ad-- -</font> ");
+		
+		helper.Scrollintoview(current_date1);
+		helper.waitFor(current_date1);
+		try {
+		helper.highLightElement(driver, current_date1);
+		String currentDate_DomainRegDate=current_date1.getText();
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDate_DomainRegDate Image in Instagram DashBoard= " + currentDate_DomainRegDate);
 		
 		helper.Scrollintoview(showAnalytics_Button1);
 		helper.waitFor(showAnalytics_Button1);
 		helper.highLightElement(driver, showAnalytics_Button1);
 		helper.jsCLick(showAnalytics_Button1);
-		Reporter.log("<B><font color = 'orange'> Step 7 -</font> Clicked on showAnalytics Button");
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
 		
 		Set<String> S4=driver.getWindowHandles();
 	    Iterator<String>it3=S4.iterator();
@@ -1781,17 +2699,566 @@ public class InstagramDashBoardSortByPage extends BasePage{
 		
 	    driver.switchTo().window(child3);
 		
-	//    helper.waitForPageToLoad();
+	    helper.waitForPageToLoad();
+		helper.waitFor(Domain_Rgsd_Date);
+		helper.highLightElement(driver, Domain_Rgsd_Date);
+		Domain_Rgsd_Date.click();
+		String actual_Domain_reg_date1 = Domain_Rgsd_Date.getText();
+		System.out.println("actual_Domain_reg_date : " + actual_Domain_reg_date1);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on Domain Registration Date = " + actual_Domain_reg_date1);
+		
+		driver.close();
+		
+		driver.switchTo().window(parent3);
+		}
+		catch (Exception e) {
+			Reporter.log("<B><font color = 'green'> Domain Registration Date -</font> ");
+		}
+		
+		Reporter.log("");
+		Reporter.log("<B><font color = 'Blue-Violet'> --2nd Ad-- -</font> ");
+		
+		helper.Scrollintoview(current_date2);
+		helper.waitFor(current_date2);
+		try {
+		helper.highLightElement(driver, current_date2);
+		String currentDate_DomainRegDate=current_date2.getText();
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDate_DomainRegDate Image in Instagram DashBoard= " + currentDate_DomainRegDate);
+		
+		helper.Scrollintoview(showAnalytics_Button2);
+		helper.waitFor(showAnalytics_Button2);
+		helper.highLightElement(driver, showAnalytics_Button2);
+		helper.jsCLick(showAnalytics_Button2);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
+		
+		Set<String> S4=driver.getWindowHandles();
+	    Iterator<String>it3=S4.iterator();
+	    String parent3=it3.next();
+	    String child3=it3.next();
+		
+	    driver.switchTo().window(child3);
+		
+	    helper.waitForPageToLoad();
+		helper.waitFor(Domain_Rgsd_Date);
+		helper.highLightElement(driver, Domain_Rgsd_Date);
+		Domain_Rgsd_Date.click();
+		String actual_Domain_reg_date2 = Domain_Rgsd_Date.getText();
+		System.out.println("actual_Domain_reg_date : " + actual_Domain_reg_date2);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on Domain Registration Date = " + actual_Domain_reg_date2);
+	
+		driver.close();
+		
+		driver.switchTo().window(parent3);
+	
+		}
+		catch (Exception e) {
+			Reporter.log("<B><font color = 'green'> Domain Registration Date -</font> ");
+		}
+		
+		Reporter.log("");
+		Reporter.log("<B><font color = 'Blue-Violet'> --3rd Ad-- -</font> ");
+		
+		helper.Scrollintoview(current_date3);
+		helper.waitFor(current_date3);
+		try {
+		helper.highLightElement(driver, current_date3);
+		String currentDate_DomainRegDate=current_date3.getText();
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDate_DomainRegDate Image in Instagram DashBoard= " + currentDate_DomainRegDate);
+		
+		helper.Scrollintoview(showAnalytics_Button3);
+		helper.waitFor(showAnalytics_Button3);
+		helper.highLightElement(driver, showAnalytics_Button3);
+		helper.jsCLick(showAnalytics_Button3);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
+		
+		Set<String> S4=driver.getWindowHandles();
+	    Iterator<String>it3=S4.iterator();
+	    String parent3=it3.next();
+	    String child3=it3.next();
+		
+	    driver.switchTo().window(child3);
+		
+	    helper.waitForPageToLoad();
+		helper.waitFor(Domain_Rgsd_Date);
+		helper.highLightElement(driver, Domain_Rgsd_Date);
+		Domain_Rgsd_Date.click();
+		String actual_Domain_reg_date3 = Domain_Rgsd_Date.getText();
+		System.out.println("actual_Domain_reg_date : " + actual_Domain_reg_date3);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on Domain Registration Date = " + actual_Domain_reg_date3);
+		
+		driver.close();
+		
+		driver.switchTo().window(parent3);
+		}
+		catch (Exception e) {
+			Reporter.log("<B><font color = 'green'> Domain Registration Date -</font> ");
+		}
+		
+		Reporter.log("");
+		Reporter.log("<B><font color = 'Blue-Violet'> --4th Ad-- -</font> ");
+		
+		helper.Scrollintoview(current_date4);
+		helper.waitFor(current_date4);
+		try {
+		helper.highLightElement(driver, current_date4);
+		String currentDate_DomainRegDate=current_date4.getText();
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDate_DomainRegDate Image in Instagram DashBoard= " + currentDate_DomainRegDate);
+		
+		helper.Scrollintoview(showAnalytics_Button4);
+		helper.waitFor(showAnalytics_Button4);
+		helper.highLightElement(driver, showAnalytics_Button4);
+		helper.jsCLick(showAnalytics_Button4);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
+		
+		Set<String> S4=driver.getWindowHandles();
+	    Iterator<String>it3=S4.iterator();
+	    String parent3=it3.next();
+	    String child3=it3.next();
+		
+	    driver.switchTo().window(child3);
+		
+	    helper.waitForPageToLoad();
 		helper.waitFor(Domain_Rgsd_Date);
 		helper.highLightElement(driver, Domain_Rgsd_Date);
 		Domain_Rgsd_Date.click();
 		String actual_Domain_reg_date = Domain_Rgsd_Date.getText();
 		System.out.println("actual_Domain_reg_date : " + actual_Domain_reg_date);
-		Reporter.log("<B><font color = 'orange'> Step 8 -</font> Clicked on actual_Domain_reg_date = " + actual_Domain_reg_date);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on Domain Registration Date = " + actual_Domain_reg_date);
 		
 		driver.close();
 		
 		driver.switchTo().window(parent3);
-*/	
+		}
+		catch (Exception e) {
+			Reporter.log("<B><font color = 'green'> Domain Registration Date -</font> ");
+		}
+		
+		Reporter.log("");
+		Reporter.log("<B><font color = 'Blue-Violet'> --5th Ad-- -</font> ");
+		
+		helper.Scrollintoview(current_date5);
+		helper.waitFor(current_date5);
+		try {
+		helper.highLightElement(driver, current_date5);
+		String currentDate_DomainRegDate=current_date5.getText();
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDate_DomainRegDate Image in Instagram DashBoard= " + currentDate_DomainRegDate);
+		
+		helper.Scrollintoview(showAnalytics_Button5);
+		helper.waitFor(showAnalytics_Button5);
+		helper.highLightElement(driver, showAnalytics_Button5);
+		helper.jsCLick(showAnalytics_Button5);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
+		
+		Set<String> S4=driver.getWindowHandles();
+	    Iterator<String>it3=S4.iterator();
+	    String parent3=it3.next();
+	    String child3=it3.next();
+		
+	    driver.switchTo().window(child3);
+		
+	    helper.waitForPageToLoad();
+		helper.waitFor(Domain_Rgsd_Date);
+		helper.highLightElement(driver, Domain_Rgsd_Date);
+		Domain_Rgsd_Date.click();
+		String actual_Domain_reg_date = Domain_Rgsd_Date.getText();
+		System.out.println("actual_Domain_reg_date : " + actual_Domain_reg_date);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on Domain Registration Date = " + actual_Domain_reg_date);
+		
+		driver.close();
+		
+		driver.switchTo().window(parent3);
+		}
+		catch (Exception e) {
+			Reporter.log("<B><font color = 'green'> Domain Registration Date -</font> ");
+		}
+		
+		Reporter.log("");
+		Reporter.log("<B><font color = 'Blue-Violet'> --6th Ad-- -</font> ");
+		
+		helper.Scrollintoview(current_date6);
+		helper.waitFor(current_date6);
+		try {
+		helper.highLightElement(driver, current_date6);
+		String currentDate_DomainRegDate=current_date6.getText();
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDate_DomainRegDate Image in Instagram DashBoard= " + currentDate_DomainRegDate);
+		
+		helper.Scrollintoview(showAnalytics_Button6);
+		helper.waitFor(showAnalytics_Button6);
+		helper.highLightElement(driver, showAnalytics_Button6);
+		helper.jsCLick(showAnalytics_Button6);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
+		
+		Set<String> S4=driver.getWindowHandles();
+	    Iterator<String>it3=S4.iterator();
+	    String parent3=it3.next();
+	    String child3=it3.next();
+		
+	    driver.switchTo().window(child3);
+		
+	    helper.waitForPageToLoad();
+		helper.waitFor(Domain_Rgsd_Date);
+		helper.highLightElement(driver, Domain_Rgsd_Date);
+		Domain_Rgsd_Date.click();
+		String actual_Domain_reg_date = Domain_Rgsd_Date.getText();
+		System.out.println("actual_Domain_reg_date : " + actual_Domain_reg_date);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on Domain Registration Date = " + actual_Domain_reg_date);
+		
+		driver.close();
+		
+		driver.switchTo().window(parent3);
+		}
+		catch (Exception e) {
+			Reporter.log("<B><font color = 'green'> Domain Registration Date -</font> ");
+		}
+		Reporter.log("");
+		Reporter.log("<B><font color = 'Blue-Violet'> --7th Ad-- -</font> ");
+		
+		helper.Scrollintoview(current_date7);
+		helper.waitFor(current_date7);
+		try {
+		helper.highLightElement(driver, current_date7);
+		String currentDate_DomainRegDate=current_date7.getText();
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDate_DomainRegDate Image in Instagram DashBoard= " + currentDate_DomainRegDate);
+		
+		helper.Scrollintoview(showAnalytics_Button7);
+		helper.waitFor(showAnalytics_Button7);
+		helper.highLightElement(driver, showAnalytics_Button7);
+		helper.jsCLick(showAnalytics_Button7);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
+		
+		Set<String> S4=driver.getWindowHandles();
+	    Iterator<String>it3=S4.iterator();
+	    String parent3=it3.next();
+	    String child3=it3.next();
+		
+	    driver.switchTo().window(child3);
+		
+	    helper.waitForPageToLoad();
+		helper.waitFor(Domain_Rgsd_Date);
+		helper.highLightElement(driver, Domain_Rgsd_Date);
+		Domain_Rgsd_Date.click();
+		String actual_Domain_reg_date = Domain_Rgsd_Date.getText();
+		System.out.println("actual_Domain_reg_date : " + actual_Domain_reg_date);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on Domain Registration Date = " + actual_Domain_reg_date);
+		
+		driver.close();
+		
+		driver.switchTo().window(parent3);
+		}
+		catch (Exception e) {
+			Reporter.log("<B><font color = 'green'> Domain Registration Date -</font> ");
+		}
+		
+		Reporter.log("");
+		Reporter.log("<B><font color = 'Blue-Violet'> --8th Ad-- -</font> ");
+		
+		helper.Scrollintoview(current_date8);
+		helper.waitFor(current_date8);
+		try {
+		helper.highLightElement(driver, current_date8);
+		String currentDate_DomainRegDate=current_date8.getText();
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDate_DomainRegDate Image in Instagram DashBoard= " + currentDate_DomainRegDate);
+		
+		helper.Scrollintoview(showAnalytics_Button8);
+		helper.waitFor(showAnalytics_Button8);
+		helper.highLightElement(driver, showAnalytics_Button8);
+		helper.jsCLick(showAnalytics_Button8);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
+		
+		Set<String> S4=driver.getWindowHandles();
+	    Iterator<String>it3=S4.iterator();
+	    String parent3=it3.next();
+	    String child3=it3.next();
+		
+	    driver.switchTo().window(child3);
+		
+	    helper.waitForPageToLoad();
+		helper.waitFor(Domain_Rgsd_Date);
+		helper.highLightElement(driver, Domain_Rgsd_Date);
+		Domain_Rgsd_Date.click();
+		String actual_Domain_reg_date = Domain_Rgsd_Date.getText();
+		System.out.println("actual_Domain_reg_date : " + actual_Domain_reg_date);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on Domain Registration Date = " + actual_Domain_reg_date);
+		
+		driver.close();
+		
+		driver.switchTo().window(parent3);
+		}
+		catch (Exception e) {
+			Reporter.log("<B><font color = 'green'> Domain Registration Date -</font> ");
+		}
+		
+		Reporter.log("");
+		Reporter.log("<B><font color = 'Blue-Violet'> --9th Ad-- -</font> ");
+		
+		helper.Scrollintoview(current_date9);
+		helper.waitFor(current_date9);
+		try {
+		helper.highLightElement(driver, current_date9);
+		String currentDate_DomainRegDate=current_date9.getText();
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDate_DomainRegDate Image in Instagram DashBoard= " + currentDate_DomainRegDate);
+		
+		helper.Scrollintoview(showAnalytics_Button9);
+		helper.waitFor(showAnalytics_Button9);
+		helper.highLightElement(driver, showAnalytics_Button9);
+		helper.jsCLick(showAnalytics_Button9);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
+		
+		Set<String> S4=driver.getWindowHandles();
+	    Iterator<String>it3=S4.iterator();
+	    String parent3=it3.next();
+	    String child3=it3.next();
+		
+	    driver.switchTo().window(child3);
+		
+	    helper.waitForPageToLoad();
+		helper.waitFor(Domain_Rgsd_Date);
+		helper.highLightElement(driver, Domain_Rgsd_Date);
+		Domain_Rgsd_Date.click();
+		String actual_Domain_reg_date = Domain_Rgsd_Date.getText();
+		System.out.println("actual_Domain_reg_date : " + actual_Domain_reg_date);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on Domain Registration Date = " + actual_Domain_reg_date);
+		
+		driver.close();
+		
+		driver.switchTo().window(parent3);
+		}
+		catch (Exception e) {
+			Reporter.log("<B><font color = 'green'> Domain Registration Date -</font> ");
+		}
+		
+		Reporter.log("");
+		Reporter.log("<B><font color = 'Blue-Violet'> --10th Ad-- -</font> ");
+		
+		helper.Scrollintoview(current_date10);
+		helper.waitFor(current_date10);
+		try {
+		helper.highLightElement(driver, current_date10);
+		String currentDate_DomainRegDate=current_date10.getText();
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDate_DomainRegDate Image in Instagram DashBoard= " + currentDate_DomainRegDate);
+		
+		helper.Scrollintoview(showAnalytics_Button10);
+		helper.waitFor(showAnalytics_Button10);
+		helper.highLightElement(driver, showAnalytics_Button10);
+		helper.jsCLick(showAnalytics_Button10);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
+		
+		Set<String> S4=driver.getWindowHandles();
+	    Iterator<String>it3=S4.iterator();
+	    String parent3=it3.next();
+	    String child3=it3.next();
+		
+	    driver.switchTo().window(child3);
+		
+	    helper.waitForPageToLoad();
+		helper.waitFor(Domain_Rgsd_Date);
+		helper.highLightElement(driver, Domain_Rgsd_Date);
+		Domain_Rgsd_Date.click();
+		String actual_Domain_reg_date = Domain_Rgsd_Date.getText();
+		System.out.println("actual_Domain_reg_date : " + actual_Domain_reg_date);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on Domain Registration Date = " + actual_Domain_reg_date);
+		
+		driver.close();
+		
+		driver.switchTo().window(parent3);
+		}
+		catch (Exception e) {
+			Reporter.log("<B><font color = 'green'> Domain Registration Date -</font> ");
+		}
+		
+		Reporter.log("");
+		Reporter.log("<B><font color = 'Blue-Violet'> --11th Ad-- -</font> ");
+		
+		helper.Scrollintoview(current_date11);
+		helper.waitFor(current_date11);
+		try {
+		helper.highLightElement(driver, current_date11);
+		String currentDate_DomainRegDate=current_date11.getText();
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDate_DomainRegDate Image in Instagram DashBoard= " + currentDate_DomainRegDate);
+		
+		helper.Scrollintoview(showAnalytics_Button11);
+		helper.waitFor(showAnalytics_Button11);
+		helper.highLightElement(driver, showAnalytics_Button11);
+		helper.jsCLick(showAnalytics_Button11);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
+		
+		Set<String> S4=driver.getWindowHandles();
+	    Iterator<String>it3=S4.iterator();
+	    String parent3=it3.next();
+	    String child3=it3.next();
+		
+	    driver.switchTo().window(child3);
+		
+	    helper.waitForPageToLoad();
+		helper.waitFor(Domain_Rgsd_Date);
+		helper.highLightElement(driver, Domain_Rgsd_Date);
+		Domain_Rgsd_Date.click();
+		String actual_Domain_reg_date = Domain_Rgsd_Date.getText();
+		System.out.println("actual_Domain_reg_date : " + actual_Domain_reg_date);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on Domain Registration Date = " + actual_Domain_reg_date);
+		
+		driver.close();
+		
+		driver.switchTo().window(parent3);
+		}
+		catch (Exception e) {
+			Reporter.log("<B><font color = 'green'> Domain Registration Date -</font> ");
+		}
+		
+		Reporter.log("");
+		Reporter.log("<B><font color = 'Blue-Violet'> --12th Ad-- -</font> ");
+		
+		helper.Scrollintoview(current_date12);
+		helper.waitFor(current_date12);
+		try {
+		helper.highLightElement(driver, current_date12);
+		String currentDate_DomainRegDate=current_date12.getText();
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDate_DomainRegDate Image in Instagram DashBoard= " + currentDate_DomainRegDate);
+		
+		helper.Scrollintoview(showAnalytics_Button12);
+		helper.waitFor(showAnalytics_Button12);
+		helper.highLightElement(driver, showAnalytics_Button12);
+		helper.jsCLick(showAnalytics_Button12);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
+		
+		Set<String> S4=driver.getWindowHandles();
+	    Iterator<String>it3=S4.iterator();
+	    String parent3=it3.next();
+	    String child3=it3.next();
+		
+	    driver.switchTo().window(child3);
+		
+	    helper.waitForPageToLoad();
+		helper.waitFor(Domain_Rgsd_Date);
+		helper.highLightElement(driver, Domain_Rgsd_Date);
+		Domain_Rgsd_Date.click();
+		String actual_Domain_reg_date = Domain_Rgsd_Date.getText();
+		System.out.println("actual_Domain_reg_date : " + actual_Domain_reg_date);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on Domain Registration Date = " + actual_Domain_reg_date);
+		
+		driver.close();
+		
+		driver.switchTo().window(parent3);
+		}
+		catch (Exception e) {
+			Reporter.log("<B><font color = 'green'> Domain Registration Date -</font> ");
+		}
+		
+		Reporter.log("");
+		Reporter.log("<B><font color = 'Blue-Violet'> --13th Ad-- -</font> ");
+		
+		helper.Scrollintoview(current_date13);
+		helper.waitFor(current_date13);
+		try {
+		helper.highLightElement(driver, current_date13);
+		String currentDate_DomainRegDate=current_date13.getText();
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDate_DomainRegDate Image in Instagram DashBoard= " + currentDate_DomainRegDate);
+		
+		helper.Scrollintoview(showAnalytics_Button13);
+		helper.waitFor(showAnalytics_Button13);
+		helper.highLightElement(driver, showAnalytics_Button13);
+		helper.jsCLick(showAnalytics_Button13);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
+		
+		Set<String> S4=driver.getWindowHandles();
+	    Iterator<String>it3=S4.iterator();
+	    String parent3=it3.next();
+	    String child3=it3.next();
+		
+	    driver.switchTo().window(child3);
+		
+	    helper.waitForPageToLoad();
+		helper.waitFor(Domain_Rgsd_Date);
+		helper.highLightElement(driver, Domain_Rgsd_Date);
+		Domain_Rgsd_Date.click();
+		String actual_Domain_reg_date = Domain_Rgsd_Date.getText();
+		System.out.println("actual_Domain_reg_date : " + actual_Domain_reg_date);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on Domain Registration Date = " + actual_Domain_reg_date);
+		
+		driver.close();
+		
+		driver.switchTo().window(parent3);
+		}
+		catch (Exception e) {
+			Reporter.log("<B><font color = 'green'> Domain Registration Date -</font> ");
+		}
+		
+		Reporter.log("");
+		Reporter.log("<B><font color = 'Blue-Violet'> --14th Ad-- -</font> ");
+		
+		helper.Scrollintoview(current_date14);
+		helper.waitFor(current_date14);
+		try {
+		helper.highLightElement(driver, current_date14);
+		String currentDate_DomainRegDate=current_date14.getText();
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDate_DomainRegDate Image in Instagram DashBoard= " + currentDate_DomainRegDate);
+		
+		helper.Scrollintoview(showAnalytics_Button14);
+		helper.waitFor(showAnalytics_Button14);
+		helper.highLightElement(driver, showAnalytics_Button14);
+		helper.jsCLick(showAnalytics_Button14);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
+		
+		Set<String> S4=driver.getWindowHandles();
+	    Iterator<String>it3=S4.iterator();
+	    String parent3=it3.next();
+	    String child3=it3.next();
+		
+	    driver.switchTo().window(child3);
+		
+	    helper.waitForPageToLoad();
+		helper.waitFor(Domain_Rgsd_Date);
+		helper.highLightElement(driver, Domain_Rgsd_Date);
+		Domain_Rgsd_Date.click();
+		String actual_Domain_reg_date = Domain_Rgsd_Date.getText();
+		System.out.println("actual_Domain_reg_date : " + actual_Domain_reg_date);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on Domain Registration Date = " + actual_Domain_reg_date);
+		
+		driver.close();
+		
+		driver.switchTo().window(parent3);
+		}
+		catch (Exception e) {
+			Reporter.log("<B><font color = 'green'> Domain Registration Date -</font> ");
+		}
+		
+		Reporter.log("");
+		Reporter.log("<B><font color = 'Blue-Violet'> --15th Ad-- -</font> ");
+		
+		helper.Scrollintoview(current_date15);
+		helper.waitFor(current_date15);
+		try {
+		helper.highLightElement(driver, current_date15);
+		String currentDate_DomainRegDate=current_date15.getText();
+		Reporter.log("<B><font color = 'blue'> ==> -</font> CurrentDate_DomainRegDate Image in Instagram DashBoard= " + currentDate_DomainRegDate);
+		
+		helper.Scrollintoview(showAnalytics_Button15);
+		helper.waitFor(showAnalytics_Button15);
+		helper.highLightElement(driver, showAnalytics_Button15);
+		helper.jsCLick(showAnalytics_Button15);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on showAnalytics Button");
+		
+		Set<String> S4=driver.getWindowHandles();
+	    Iterator<String>it3=S4.iterator();
+	    String parent3=it3.next();
+	    String child3=it3.next();
+		
+	    driver.switchTo().window(child3);
+		
+	    helper.waitForPageToLoad();
+		helper.waitFor(Domain_Rgsd_Date);
+		helper.highLightElement(driver, Domain_Rgsd_Date);
+		Domain_Rgsd_Date.click();
+		String actual_Domain_reg_date = Domain_Rgsd_Date.getText();
+		System.out.println("actual_Domain_reg_date : " + actual_Domain_reg_date);
+		Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked on Domain Registration Date = " + actual_Domain_reg_date);
+		
+		driver.close();
+		
+		driver.switchTo().window(parent3);
+		}
+		catch (Exception e) {
+			Reporter.log("<B><font color = 'green'> Domain Registration Date -</font> ");
+		}*/
 	}
 }

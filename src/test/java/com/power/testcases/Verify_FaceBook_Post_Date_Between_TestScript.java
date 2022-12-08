@@ -24,7 +24,7 @@ public class Verify_FaceBook_Post_Date_Between_TestScript extends TestBase{
 	facebook_post_date_between_page.PostDateBetween_Last_Thirty_Days();
 	facebook_post_date_between_page.PostDateBetween_This_Month();
 	facebook_post_date_between_page.PostDateBetween_Last_Month();
-//	facebook_post_date_between_page.PostDateBetween_CustomRange();
+	facebook_post_date_between_page.PostDateBetween_CustomRange();
 	
 	}
 }

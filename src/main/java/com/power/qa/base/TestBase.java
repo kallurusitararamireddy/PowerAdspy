@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+//import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.ITestResult;
@@ -30,6 +31,7 @@ import com.power.qa.util.Helpers;
 import com.power.qa.util.ReadConfig;
 import com.power.qa.util.Screenshot;
 
+//import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class TestBase {	
@@ -70,9 +72,59 @@ public class TestBase {
 			e.printStackTrace();
 		}
 	}
-
-	@SuppressWarnings({ "deprecation", "static-access" })
 	
+	/*@SuppressWarnings({ "deprecation", "static-access" })
+	@BeforeMethod
+	public void initialization() throws InterruptedException  {
+		String browserName = prop.getProperty("Browser");
+		ChromeOptions options = new ChromeOptions();
+		if (browserName.equalsIgnoreCase("chrome")) {
+			System.setProperty("webdriver.chrome.driver", readconfig.getChromepath());
+			System.setProperty("webdriver.chrome.silentOutput", "true");
+			WebDriverManager.chromedriver().setup();
+			driver.set(new ChromeDriver());			
+			Dimension dimension = new Dimension(450,600);
+			getDriver().manage().window().setSize(dimension);			
+			options.setCapability("timeouts", "{implicit: 30000, pageLoad: 300000, script: 90000}");
+			System.out.println("TIMEOUTS FOR CHROME ARE :" + options.getCapability("timeouts"));
+			DesiredCapabilities chrome = new DesiredCapabilities();
+			chrome.setCapability("timeouts", "{implicit: 30000, pageLoad: 300000, script: 90000}");
+			chrome.merge(options);
+			System.out.println("Desired Capabilities are: "+ chrome.getCapability("timeouts"));
+		
+			
+		} else if (browserName.equalsIgnoreCase("firefox")) {
+			System.setProperty("webdriver.gecko.driver", readconfig.getFirefoxpath());
+			WebDriverManager.firefoxdriver().setup();
+			driver.set(new FirefoxDriver());				
+
+		} else if (browserName.equalsIgnoreCase("opera")) {
+			System.setProperty("webdriver.opera.driver", readconfig.getOperapath());
+			WebDriverManager.operadriver().setup();
+			driver.set(new OperaDriver());
+			
+		} else if (browserName.equalsIgnoreCase("edge")) {
+			System.setProperty("webdriver.edge.driver", readconfig.getEdgePath());
+			WebDriverManager.edgedriver().setup();
+			driver.set(new EdgeDriver());
+			
+		} else {
+			Assert.assertTrue(false, "No Browser type sent or Browser not Mention in this Method");
+		}
+		
+		System.out.println("Browser setup by Thread "+Thread.currentThread().getId()+" and Driver reference is : "+ getDriver());
+		getDriver().manage().window().maximize();
+		getDriver().manage().deleteAllCookies();		
+		getDriver().get(readconfig.getApplicationURL("Dev"));
+	
+	
+	
+		loginPage = new LoginPage(getDriver());
+		loginPage.login(readconfig.getUserName(),readconfig.getPassword());
+
+	}*/
+	
+	@SuppressWarnings({ "deprecation", "static-access" })
 	@BeforeClass
 	public void initialization() throws InterruptedException  {
 		String browserName = prop.getProperty("Browser");
@@ -92,20 +144,19 @@ public class TestBase {
 			System.out.println("Desired Capabilities are: "+ chrome.getCapability("timeouts"));
 		
 			
-		} 
-		else if (browserName.equalsIgnoreCase("firefox")) {
-		//	System.setProperty("webdriver.gecko.driver", readconfig.getFirefoxpath());
-		//	WebDriverManager.firefoxdriver().setup();
+		} else if (browserName.equalsIgnoreCase("firefox")) {
+//			System.setProperty("webdriver.gecko.driver", readconfig.getFirefoxpath());
+//			WebDriverManager.firefoxdriver().setup();
 			driver.set(new FirefoxDriver());				
 
 //		} else if (browserName.equalsIgnoreCase("opera")) {
 //			System.setProperty("webdriver.opera.driver", readconfig.getOperapath());
 //			WebDriverManager.operadriver().setup();
 //			driver.set(new OperaDriver());
-//			
+			
 		} else if (browserName.equalsIgnoreCase("edge")) {
-		//	System.setProperty("webdriver.edge.driver", readconfig.getEdgePath());
-		//	WebDriverManager.edgedriver().setup();
+//			System.setProperty("webdriver.edge.driver", readconfig.getEdgePath());
+//			WebDriverManager.edgedriver().setup();
 			driver.set(new EdgeDriver());
 			
 		} else {
@@ -116,6 +167,7 @@ public class TestBase {
 		getDriver().manage().window().maximize();
 		getDriver().manage().deleteAllCookies();		
 		getDriver().get(readconfig.getApplicationURL("Dev"));
+		
 	}	
 	
 	
@@ -123,7 +175,7 @@ public class TestBase {
 	public void setUp() throws InterruptedException, AWTException {
 		loginPage = new LoginPage(getDriver());
 		loginPage.login(readconfig.getUserName(),readconfig.getPassword());
-	
+		
 	}
 
 	@AfterMethod

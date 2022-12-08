@@ -13,6 +13,5 @@ public class Verify_Instagram_DashBoard_AdSeenBetween extends TestBase{
 	InstagramDashBoard_AdSeenBetweenPage adsSeenBetween=new InstagramDashBoard_AdSeenBetweenPage(getDriver());
 	adsSeenBetween.verify_instagram_dashboard_addSeenBetween();
 
-	}
-	
+  }
 }

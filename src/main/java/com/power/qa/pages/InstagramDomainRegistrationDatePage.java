@@ -41,6 +41,96 @@ public class InstagramDomainRegistrationDatePage extends BasePage{
 		@FindBy(xpath="//div[@id='domain_ads_timepicker']")
 		WebElement domain_Reg_Date_DropDown;
 		
+		@FindBy(xpath="(//div[@class='card_col_1']//div[@class='ad_date'])[1]")
+		WebElement current_date1;
+		
+		@FindBy(xpath="(//div[@class='card_col_2']//div[@class='ad_date'])[1]")
+		WebElement current_date2;
+		
+		@FindBy(xpath="(//div[@class='card_col_3']//div[@class='ad_date'])[1]")
+		WebElement current_date3;
+		
+		@FindBy(xpath="(//div[@class='card_col_1']//div[@class='ad_date'])[2]")
+		WebElement current_date4;
+		
+		@FindBy(xpath="(//div[@class='card_col_2']//div[@class='ad_date'])[2]")
+		WebElement current_date5;
+		
+		@FindBy(xpath="(//div[@class='card_col_3']//div[@class='ad_date'])[2]")
+		WebElement current_date6;
+
+		@FindBy(xpath="(//div[@class='card_col_1']//div[@class='ad_date'])[3]")
+		WebElement current_date7;
+		
+		@FindBy(xpath="(//div[@class='card_col_2']//div[@class='ad_date'])[3]")
+		WebElement current_date8;
+		
+		@FindBy(xpath="(//div[@class='card_col_3']//div[@class='ad_date'])[3]")
+		WebElement current_date9;
+		
+		@FindBy(xpath="(//div[@class='card_col_1']//div[@class='ad_date'])[4]")
+		WebElement current_date10;
+		
+		@FindBy(xpath="(//div[@class='card_col_2']//div[@class='ad_date'])[4]")
+		WebElement current_date11;
+		
+		@FindBy(xpath="(//div[@class='card_col_3']//div[@class='ad_date'])[4]")
+		WebElement current_date12;
+		
+		@FindBy(xpath="(//div[@class='card_col_1']//div[@class='ad_date'])[5]")
+		WebElement current_date13;
+		
+		@FindBy(xpath="(//div[@class='card_col_2']//div[@class='ad_date'])[5]")
+		WebElement current_date14;
+		
+		@FindBy(xpath="(//div[@class='card_col_3']//div[@class='ad_date'])[5]")
+		WebElement current_date15;
+		
+		@FindBy(xpath="(//div[@class='card_col_1']//a[text()='Show Analytics'])[1]")
+		WebElement showAnalytics_Button1;
+		
+		@FindBy(xpath="(//div[@class='card_col_2']//a[text()='Show Analytics'])[1]")
+		WebElement showAnalytics_Button2;
+		
+		@FindBy(xpath="(//div[@class='card_col_3']//a[text()='Show Analytics'])[1]")
+		WebElement showAnalytics_Button3;
+		
+		@FindBy(xpath="(//div[@class='card_col_1']//a[text()='Show Analytics'])[2]")
+		WebElement showAnalytics_Button4;
+		
+		@FindBy(xpath="(//div[@class='card_col_2']//a[text()='Show Analytics'])[2]")
+		WebElement showAnalytics_Button5;
+		
+		@FindBy(xpath="(//div[@class='card_col_3']//a[text()='Show Analytics'])[2]")
+		WebElement showAnalytics_Button6;
+		
+		@FindBy(xpath="(//div[@class='card_col_1']//a[text()='Show Analytics'])[3]")
+		WebElement showAnalytics_Button7;
+		
+		@FindBy(xpath="(//div[@class='card_col_2']//a[text()='Show Analytics'])[3]")
+		WebElement showAnalytics_Button8;
+		
+		@FindBy(xpath="(//div[@class='card_col_3']//a[text()='Show Analytics'])[3]")
+		WebElement showAnalytics_Button9;
+		
+		@FindBy(xpath="(//div[@class='card_col_1']//a[text()='Show Analytics'])[4]")
+		WebElement showAnalytics_Button10;
+		
+		@FindBy(xpath="(//div[@class='card_col_2']//a[text()='Show Analytics'])[4]")
+		WebElement showAnalytics_Button11;
+		
+		@FindBy(xpath="(//div[@class='card_col_3']//a[text()='Show Analytics'])[4]")
+		WebElement showAnalytics_Button12;
+		
+		@FindBy(xpath="(//div[@class='card_col_1']//a[text()='Show Analytics'])[5]")
+		WebElement showAnalytics_Button13;
+		
+		@FindBy(xpath="(//div[@class='card_col_2']//a[text()='Show Analytics'])[5]")
+		WebElement showAnalytics_Button14;
+		
+		@FindBy(xpath="(//div[@class='card_col_3']//a[text()='Show Analytics'])[5]")
+		WebElement showAnalytics_Button15;
+		
 		@FindBy(xpath="(//li[text()='All'])[3]")
 		WebElement domain_Reg_Date_All;
 		
@@ -104,7 +194,8 @@ public class InstagramDomainRegistrationDatePage extends BasePage{
 			helper.waitForPageToLoad();
 			
 			//ALL
-			
+	/*		
+			Reporter.log("");
 			Reporter.log("<B><font color = 'green'> Domain Registration Date : All -</font> ");
 			
 		    helper.waitFor(clearSearchField);
@@ -134,17 +225,24 @@ public class InstagramDomainRegistrationDatePage extends BasePage{
 			String Total_Ads_Count_All=toatal_Count_Ads.getText();
 			Reporter.log("<B><font color = 'orange'> Step 5 -</font> Total_Ads_Count_All= " + Total_Ads_Count_All);
 			
-			helper.waitFor(current_Image_Date);
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 1st -</font> ");
+			
 			try {
-			helper.highLightElement(driver, current_Image_Date);
-			String imageDate = current_Image_Date.getText();
-			helper.jsCLick(current_Image_Date);
-			Reporter.log("<B><font color = 'orange'> Step 6 -</font> Clicked On Current Image Date = " + imageDate);
+			helper.Scrollintoview(current_date1);
+			helper.waitFor(current_date1);
+			helper.highLightElement(driver, current_date1);
+			String imageDate = current_date1.getText();
+			helper.jsCLick(current_date1);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
 
-			helper.waitFor(showAnalytics_Button);
-			helper.highLightElement(driver, showAnalytics_Button);
-			helper.jsCLick(showAnalytics_Button);
-			Reporter.log("<B><font color = 'orange'> Step 7 -</font> Clicked On ShowAnalytics Button.");
+			helper.Scrollintoview(showAnalytics_Button1);
+			helper.waitFor(showAnalytics_Button1);
+			helper.highLightElement(driver, showAnalytics_Button1);
+			String linkText1 = showAnalytics_Button1.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button1);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
 
 			Set<String> S1=driver.getWindowHandles();
 		    Iterator<String>it=S1.iterator();
@@ -154,39 +252,723 @@ public class InstagramDomainRegistrationDatePage extends BasePage{
 		    driver.switchTo().window(child);
 		    
 		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
 		    helper.waitFor(Last_Seen_childWindow);
 		    helper.highLightElement(driver, Last_Seen_childWindow);
 		    String lastSeenDate = Last_Seen_childWindow.getText();
-		    Reporter.log("<B><font color = 'orange'> Step 8 -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
 			
-		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
 		    helper.waitFor(domain_reg_Date);
 		    helper.highLightElement(driver, domain_reg_Date);
 		    String domainRegDate = domain_reg_Date.getText();
-		    Reporter.log("<B><font color = 'orange'> Step 9 -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
 		    
 		    driver.close();
 		    
 		    driver.switchTo().window(parent);
 		    
-		    String joinString = null;
-			//	String[] actualDate = null;
-				
-				String[] splitString = lastSeenDate.split(" ");
-				for(int i=0;i<splitString.length-2;i++) {
-					String actualDate=splitString[i]; 
-					joinString= splitString[i+1]+" "+ splitString[i]+" " + splitString[i+2];
-				//	System.out.println("splitString : " + splitString[i]);
-					System.out.println("lastseen Date in Newest: " + joinString);
-				}
-			Assert.assertEquals(imageDate, joinString);
-			Reporter.log("<B><font color = 'orange'> Step 10 -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
+		    helper.getLastseenDate(lastSeenDate, imageDate);
 			}
 			catch (Exception e) {
-		    	 Reporter.log("<B><font color = 'orange'> Step 6 -</font> Oops! Looks like we don't have data for this search criteria yet.");
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
 			}
 			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 2nd -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date2);
+			helper.waitFor(current_date2);
+			helper.highLightElement(driver, current_date2);
+			String imageDate = current_date2.getText();
+			helper.jsCLick(current_date2);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button2);
+			helper.waitFor(showAnalytics_Button2);
+			helper.highLightElement(driver, showAnalytics_Button2);
+			String linkText1 = showAnalytics_Button2.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button2);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 3rd -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date3);
+			helper.waitFor(current_date3);
+			helper.highLightElement(driver, current_date3);
+			String imageDate = current_date3.getText();
+			helper.jsCLick(current_date3);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button3);
+			helper.waitFor(showAnalytics_Button3);
+			helper.highLightElement(driver, showAnalytics_Button3);
+			String linkText1 = showAnalytics_Button3.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button3);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 4th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date4);
+			helper.waitFor(current_date4);
+			helper.highLightElement(driver, current_date4);
+			String imageDate = current_date4.getText();
+			helper.jsCLick(current_date4);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button4);
+			helper.waitFor(showAnalytics_Button4);
+			helper.highLightElement(driver, showAnalytics_Button4);
+			String linkText1 = showAnalytics_Button4.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button4);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 5th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date5);
+			helper.waitFor(current_date5);
+			helper.highLightElement(driver, current_date5);
+			String imageDate = current_date5.getText();
+			helper.jsCLick(current_date5);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button5);
+			helper.waitFor(showAnalytics_Button5);
+			helper.highLightElement(driver, showAnalytics_Button5);
+			String linkText1 = showAnalytics_Button5.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button5);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 6th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date6);
+			helper.waitFor(current_date6);
+			helper.highLightElement(driver, current_date6);
+			String imageDate = current_date6.getText();
+			helper.jsCLick(current_date6);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button6);
+			helper.waitFor(showAnalytics_Button6);
+			helper.highLightElement(driver, showAnalytics_Button6);
+			String linkText1 = showAnalytics_Button6.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button6);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 7th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date7);
+			helper.waitFor(current_date7);
+			helper.highLightElement(driver, current_date7);
+			String imageDate = current_date7.getText();
+			helper.jsCLick(current_date7);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button7);
+			helper.waitFor(showAnalytics_Button7);
+			helper.highLightElement(driver, showAnalytics_Button7);
+			String linkText1 = showAnalytics_Button7.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button7);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 8th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date8);
+			helper.waitFor(current_date8);
+			helper.highLightElement(driver, current_date8);
+			String imageDate = current_date8.getText();
+			helper.jsCLick(current_date8);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button8);
+			helper.waitFor(showAnalytics_Button8);
+			helper.highLightElement(driver, showAnalytics_Button8);
+			String linkText1 = showAnalytics_Button8.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button8);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 9th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date9);
+			helper.waitFor(current_date9);
+			helper.highLightElement(driver, current_date9);
+			String imageDate = current_date9.getText();
+			helper.jsCLick(current_date9);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button9);
+			helper.waitFor(showAnalytics_Button9);
+			helper.highLightElement(driver, showAnalytics_Button9);
+			String linkText1 = showAnalytics_Button9.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button9);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 10th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date10);
+			helper.waitFor(current_date10);
+			helper.highLightElement(driver, current_date10);
+			String imageDate = current_date10.getText();
+			helper.jsCLick(current_date10);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button10);
+			helper.waitFor(showAnalytics_Button10);
+			helper.highLightElement(driver, showAnalytics_Button10);
+			String linkText1 = showAnalytics_Button10.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button10);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 11th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date11);
+			helper.waitFor(current_date11);
+			helper.highLightElement(driver, current_date11);
+			String imageDate = current_date11.getText();
+			helper.jsCLick(current_date11);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button11);
+			helper.waitFor(showAnalytics_Button11);
+			helper.highLightElement(driver, showAnalytics_Button11);
+			String linkText1 = showAnalytics_Button11.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button11);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 12th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date12);
+			helper.waitFor(current_date12);
+			helper.highLightElement(driver, current_date12);
+			String imageDate = current_date12.getText();
+			helper.jsCLick(current_date12);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button12);
+			helper.waitFor(showAnalytics_Button12);
+			helper.highLightElement(driver, showAnalytics_Button12);
+			String linkText1 = showAnalytics_Button12.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button12);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 13th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date13);
+			helper.waitFor(current_date13);
+			helper.highLightElement(driver, current_date13);
+			String imageDate = current_date13.getText();
+			helper.jsCLick(current_date13);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button13);
+			helper.waitFor(showAnalytics_Button13);
+			helper.highLightElement(driver, showAnalytics_Button13);
+			String linkText1 = showAnalytics_Button13.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button13);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 14th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date14);
+			helper.waitFor(current_date14);
+			helper.highLightElement(driver, current_date14);
+			String imageDate = current_date14.getText();
+			helper.jsCLick(current_date14);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button14);
+			helper.waitFor(showAnalytics_Button14);
+			helper.highLightElement(driver, showAnalytics_Button14);
+			String linkText1 = showAnalytics_Button14.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button14);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 15th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date15);
+			helper.waitFor(current_date15);
+			helper.highLightElement(driver, current_date15);
+			String imageDate = current_date15.getText();
+			helper.jsCLick(current_date15);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button15);
+			helper.waitFor(showAnalytics_Button15);
+			helper.highLightElement(driver, showAnalytics_Button15);
+			String linkText1 = showAnalytics_Button15.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button15);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+		
 			//Today
+			Reporter.log("");
 			Reporter.log("<B><font color = 'green'> Domain Registration Date : Today -</font> ");
 			
 		    helper.waitFor(clearSearchField);
@@ -194,6 +976,7 @@ public class InstagramDomainRegistrationDatePage extends BasePage{
 			helper.jsCLick(clearSearchField);
 			Reporter.log("<B><font color = 'orange'> Step 1 -</font> Clicked On clear search.");
 			
+			helper.waitForPageToLoad();
 		    helper.waitFor(domain_Reg_Date_DropDown);
 			helper.highLightElement(driver, domain_Reg_Date_DropDown);
 			helper.jsCLick(domain_Reg_Date_DropDown);
@@ -216,17 +999,24 @@ public class InstagramDomainRegistrationDatePage extends BasePage{
 			String Total_Ads_Count_Today=toatal_Count_Ads.getText();
 			Reporter.log("<B><font color = 'orange'> Step 5 -</font> Total_Ads_Count_Today= " + Total_Ads_Count_Today);
 			
-			helper.waitFor(current_Image_Date);
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 1st -</font> ");
+			
 			try {
-			helper.highLightElement(driver, current_Image_Date);
-			String imageDate = current_Image_Date.getText();
-			helper.jsCLick(current_Image_Date);
-			Reporter.log("<B><font color = 'orange'> Step 6 -</font> Clicked On Current Image Date = " + imageDate);
+			helper.Scrollintoview(current_date1);
+			helper.waitFor(current_date1);
+			helper.highLightElement(driver, current_date1);
+			String imageDate = current_date1.getText();
+			helper.jsCLick(current_date1);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
 
-			helper.waitFor(showAnalytics_Button);
-			helper.highLightElement(driver, showAnalytics_Button);
-			helper.jsCLick(showAnalytics_Button);
-			Reporter.log("<B><font color = 'orange'> Step 7 -</font> Clicked On ShowAnalytics Button.");
+			helper.Scrollintoview(showAnalytics_Button1);
+			helper.waitFor(showAnalytics_Button1);
+			helper.highLightElement(driver, showAnalytics_Button1);
+			String linkText1 = showAnalytics_Button1.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button1);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
 
 			Set<String> S1=driver.getWindowHandles();
 		    Iterator<String>it=S1.iterator();
@@ -236,41 +1026,722 @@ public class InstagramDomainRegistrationDatePage extends BasePage{
 		    driver.switchTo().window(child);
 		    
 		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
 		    helper.waitFor(Last_Seen_childWindow);
 		    helper.highLightElement(driver, Last_Seen_childWindow);
 		    String lastSeenDate = Last_Seen_childWindow.getText();
-		    Reporter.log("<B><font color = 'orange'> Step 8 -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
 			
-		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
 		    helper.waitFor(domain_reg_Date);
 		    helper.highLightElement(driver, domain_reg_Date);
 		    String domainRegDate = domain_reg_Date.getText();
-		    Reporter.log("<B><font color = 'orange'> Step 9 -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
 		    
 		    driver.close();
-			
 		    
 		    driver.switchTo().window(parent);
 		    
-		    String joinString = null;
-			//	String[] actualDate = null;
-				
-				String[] splitString = domainRegDate.split(" ");
-				for(int i=0;i<splitString.length-2;i++) {
-					String actualDate=splitString[i]; 
-					joinString= splitString[i+1]+" "+ splitString[i]+" " + splitString[i+2];
-				//	System.out.println("splitString : " + splitString[i]);
-					System.out.println("lastseen Date in Newest: " + joinString);
-				}
-			Assert.assertEquals(imageDate, joinString);
-			Reporter.log("<B><font color = 'orange'> Step 10 -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
+		    helper.getLastseenDate(lastSeenDate, imageDate);
 			}
 			catch (Exception e) {
-		    	 Reporter.log("<B><font color = 'orange'> Step 6 -</font> Oops! Looks like we don't have data for this search criteria yet.");
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
 			}
 			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 2nd -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date2);
+			helper.waitFor(current_date2);
+			helper.highLightElement(driver, current_date2);
+			String imageDate = current_date2.getText();
+			helper.jsCLick(current_date2);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button2);
+			helper.waitFor(showAnalytics_Button2);
+			helper.highLightElement(driver, showAnalytics_Button2);
+			String linkText1 = showAnalytics_Button2.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button2);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 3rd -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date3);
+			helper.waitFor(current_date3);
+			helper.highLightElement(driver, current_date3);
+			String imageDate = current_date3.getText();
+			helper.jsCLick(current_date3);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button3);
+			helper.waitFor(showAnalytics_Button3);
+			helper.highLightElement(driver, showAnalytics_Button3);
+			String linkText1 = showAnalytics_Button3.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button3);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 4th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date4);
+			helper.waitFor(current_date4);
+			helper.highLightElement(driver, current_date4);
+			String imageDate = current_date4.getText();
+			helper.jsCLick(current_date4);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button4);
+			helper.waitFor(showAnalytics_Button4);
+			helper.highLightElement(driver, showAnalytics_Button4);
+			String linkText1 = showAnalytics_Button4.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button4);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 5th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date5);
+			helper.waitFor(current_date5);
+			helper.highLightElement(driver, current_date5);
+			String imageDate = current_date5.getText();
+			helper.jsCLick(current_date5);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button5);
+			helper.waitFor(showAnalytics_Button5);
+			helper.highLightElement(driver, showAnalytics_Button5);
+			String linkText1 = showAnalytics_Button5.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button5);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 6th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date6);
+			helper.waitFor(current_date6);
+			helper.highLightElement(driver, current_date6);
+			String imageDate = current_date6.getText();
+			helper.jsCLick(current_date6);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button6);
+			helper.waitFor(showAnalytics_Button6);
+			helper.highLightElement(driver, showAnalytics_Button6);
+			String linkText1 = showAnalytics_Button6.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button6);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 7th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date7);
+			helper.waitFor(current_date7);
+			helper.highLightElement(driver, current_date7);
+			String imageDate = current_date7.getText();
+			helper.jsCLick(current_date7);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button7);
+			helper.waitFor(showAnalytics_Button7);
+			helper.highLightElement(driver, showAnalytics_Button7);
+			String linkText1 = showAnalytics_Button7.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button7);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 8th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date8);
+			helper.waitFor(current_date8);
+			helper.highLightElement(driver, current_date8);
+			String imageDate = current_date8.getText();
+			helper.jsCLick(current_date8);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button8);
+			helper.waitFor(showAnalytics_Button8);
+			helper.highLightElement(driver, showAnalytics_Button8);
+			String linkText1 = showAnalytics_Button8.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button8);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 9th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date9);
+			helper.waitFor(current_date9);
+			helper.highLightElement(driver, current_date9);
+			String imageDate = current_date9.getText();
+			helper.jsCLick(current_date9);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button9);
+			helper.waitFor(showAnalytics_Button9);
+			helper.highLightElement(driver, showAnalytics_Button9);
+			String linkText1 = showAnalytics_Button9.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button9);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 10th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date10);
+			helper.waitFor(current_date10);
+			helper.highLightElement(driver, current_date10);
+			String imageDate = current_date10.getText();
+			helper.jsCLick(current_date10);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button10);
+			helper.waitFor(showAnalytics_Button10);
+			helper.highLightElement(driver, showAnalytics_Button10);
+			String linkText1 = showAnalytics_Button10.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button10);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 11th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date11);
+			helper.waitFor(current_date11);
+			helper.highLightElement(driver, current_date11);
+			String imageDate = current_date11.getText();
+			helper.jsCLick(current_date11);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button11);
+			helper.waitFor(showAnalytics_Button11);
+			helper.highLightElement(driver, showAnalytics_Button11);
+			String linkText1 = showAnalytics_Button11.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button11);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 12th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date12);
+			helper.waitFor(current_date12);
+			helper.highLightElement(driver, current_date12);
+			String imageDate = current_date12.getText();
+			helper.jsCLick(current_date12);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button12);
+			helper.waitFor(showAnalytics_Button12);
+			helper.highLightElement(driver, showAnalytics_Button12);
+			String linkText1 = showAnalytics_Button12.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button12);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 13th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date13);
+			helper.waitFor(current_date13);
+			helper.highLightElement(driver, current_date13);
+			String imageDate = current_date13.getText();
+			helper.jsCLick(current_date13);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button13);
+			helper.waitFor(showAnalytics_Button13);
+			helper.highLightElement(driver, showAnalytics_Button13);
+			String linkText1 = showAnalytics_Button13.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button13);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 14th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date14);
+			helper.waitFor(current_date14);
+			helper.highLightElement(driver, current_date14);
+			String imageDate = current_date14.getText();
+			helper.jsCLick(current_date14);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button14);
+			helper.waitFor(showAnalytics_Button14);
+			helper.highLightElement(driver, showAnalytics_Button14);
+			String linkText1 = showAnalytics_Button14.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button14);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 15th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date15);
+			helper.waitFor(current_date15);
+			helper.highLightElement(driver, current_date15);
+			String imageDate = current_date15.getText();
+			helper.jsCLick(current_date15);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button15);
+			helper.waitFor(showAnalytics_Button15);
+			helper.highLightElement(driver, showAnalytics_Button15);
+			String linkText1 = showAnalytics_Button15.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button15);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}		
 			//Yesterday
 			
+			Reporter.log("");
 			Reporter.log("<B><font color = 'green'> Domain Registration Date : Yesterday -</font> ");
 			
 		    helper.waitFor(clearSearchField);
@@ -278,6 +1749,7 @@ public class InstagramDomainRegistrationDatePage extends BasePage{
 			helper.jsCLick(clearSearchField);
 			Reporter.log("<B><font color = 'orange'> Step 1 -</font> Clicked On clear search.");
 			
+			helper.waitForPageToLoad();
 		    helper.waitFor(domain_Reg_Date_DropDown);
 			helper.highLightElement(driver, domain_Reg_Date_DropDown);
 			helper.jsCLick(domain_Reg_Date_DropDown);
@@ -300,17 +1772,24 @@ public class InstagramDomainRegistrationDatePage extends BasePage{
 			String Total_Ads_Count_Yesterday=toatal_Count_Ads.getText();
 			Reporter.log("<B><font color = 'orange'> Step 5 -</font> Total_Ads_Count_All= " + Total_Ads_Count_Yesterday);
 			
-			helper.waitFor(current_Image_Date);
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 1st -</font> ");
+			
 			try {
-			helper.highLightElement(driver, current_Image_Date);
-			String imageDate = current_Image_Date.getText();
-			helper.jsCLick(current_Image_Date);
-			Reporter.log("<B><font color = 'orange'> Step 6 -</font> Clicked On Current Image Date.");
+			helper.Scrollintoview(current_date1);
+			helper.waitFor(current_date1);
+			helper.highLightElement(driver, current_date1);
+			String imageDate = current_date1.getText();
+			helper.jsCLick(current_date1);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
 
-			helper.waitFor(showAnalytics_Button);
-			helper.highLightElement(driver, showAnalytics_Button);
-			helper.jsCLick(showAnalytics_Button);
-			Reporter.log("<B><font color = 'orange'> Step 7 -</font> Clicked On ShowAnalytics Button.");
+			helper.Scrollintoview(showAnalytics_Button1);
+			helper.waitFor(showAnalytics_Button1);
+			helper.highLightElement(driver, showAnalytics_Button1);
+			String linkText1 = showAnalytics_Button1.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button1);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
 
 			Set<String> S1=driver.getWindowHandles();
 		    Iterator<String>it=S1.iterator();
@@ -320,41 +1799,723 @@ public class InstagramDomainRegistrationDatePage extends BasePage{
 		    driver.switchTo().window(child);
 		    
 		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
 		    helper.waitFor(Last_Seen_childWindow);
 		    helper.highLightElement(driver, Last_Seen_childWindow);
 		    String lastSeenDate = Last_Seen_childWindow.getText();
-		    Reporter.log("<B><font color = 'orange'> Step 8 -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
 			
-		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
 		    helper.waitFor(domain_reg_Date);
 		    helper.highLightElement(driver, domain_reg_Date);
 		    String domainRegDate = domain_reg_Date.getText();
-		    Reporter.log("<B><font color = 'orange'> Step 9 -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
-		    
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
 		    
 		    driver.close();
-			
+		    
 		    driver.switchTo().window(parent);
 		    
-		    String joinString = null;
-			//	String[] actualDate = null;
-				
-				String[] splitString = domainRegDate.split(" ");
-				for(int i=0;i<splitString.length-2;i++) {
-					String actualDate=splitString[i]; 
-					joinString= splitString[i+1]+" "+ splitString[i]+" " + splitString[i+2];
-				//	System.out.println("splitString : " + splitString[i]);
-					System.out.println("lastseen Date in Newest: " + joinString);
-				}
-			Assert.assertEquals(imageDate, joinString);
-			Reporter.log("<B><font color = 'orange'> Step 10 -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
+		    helper.getLastseenDate(lastSeenDate, imageDate);
 			}
 			catch (Exception e) {
-		    	 Reporter.log("<B><font color = 'orange'> Step 6 -</font> Oops! Looks like we don't have data for this search criteria yet.");
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
 			}
 			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 2nd -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date2);
+			helper.waitFor(current_date2);
+			helper.highLightElement(driver, current_date2);
+			String imageDate = current_date2.getText();
+			helper.jsCLick(current_date2);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button2);
+			helper.waitFor(showAnalytics_Button2);
+			helper.highLightElement(driver, showAnalytics_Button2);
+			String linkText1 = showAnalytics_Button2.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button2);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 3rd -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date3);
+			helper.waitFor(current_date3);
+			helper.highLightElement(driver, current_date3);
+			String imageDate = current_date3.getText();
+			helper.jsCLick(current_date3);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button3);
+			helper.waitFor(showAnalytics_Button3);
+			helper.highLightElement(driver, showAnalytics_Button3);
+			String linkText1 = showAnalytics_Button3.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button3);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 4th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date4);
+			helper.waitFor(current_date4);
+			helper.highLightElement(driver, current_date4);
+			String imageDate = current_date4.getText();
+			helper.jsCLick(current_date4);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button4);
+			helper.waitFor(showAnalytics_Button4);
+			helper.highLightElement(driver, showAnalytics_Button4);
+			String linkText1 = showAnalytics_Button4.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button4);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 5th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date5);
+			helper.waitFor(current_date5);
+			helper.highLightElement(driver, current_date5);
+			String imageDate = current_date5.getText();
+			helper.jsCLick(current_date5);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button5);
+			helper.waitFor(showAnalytics_Button5);
+			helper.highLightElement(driver, showAnalytics_Button5);
+			String linkText1 = showAnalytics_Button5.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button5);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 6th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date6);
+			helper.waitFor(current_date6);
+			helper.highLightElement(driver, current_date6);
+			String imageDate = current_date6.getText();
+			helper.jsCLick(current_date6);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button6);
+			helper.waitFor(showAnalytics_Button6);
+			helper.highLightElement(driver, showAnalytics_Button6);
+			String linkText1 = showAnalytics_Button6.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button6);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 7th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date7);
+			helper.waitFor(current_date7);
+			helper.highLightElement(driver, current_date7);
+			String imageDate = current_date7.getText();
+			helper.jsCLick(current_date7);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button7);
+			helper.waitFor(showAnalytics_Button7);
+			helper.highLightElement(driver, showAnalytics_Button7);
+			String linkText1 = showAnalytics_Button7.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button7);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 8th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date8);
+			helper.waitFor(current_date8);
+			helper.highLightElement(driver, current_date8);
+			String imageDate = current_date8.getText();
+			helper.jsCLick(current_date8);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button8);
+			helper.waitFor(showAnalytics_Button8);
+			helper.highLightElement(driver, showAnalytics_Button8);
+			String linkText1 = showAnalytics_Button8.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button8);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 9th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date9);
+			helper.waitFor(current_date9);
+			helper.highLightElement(driver, current_date9);
+			String imageDate = current_date9.getText();
+			helper.jsCLick(current_date9);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button9);
+			helper.waitFor(showAnalytics_Button9);
+			helper.highLightElement(driver, showAnalytics_Button9);
+			String linkText1 = showAnalytics_Button9.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button9);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 10th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date10);
+			helper.waitFor(current_date10);
+			helper.highLightElement(driver, current_date10);
+			String imageDate = current_date10.getText();
+			helper.jsCLick(current_date10);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button10);
+			helper.waitFor(showAnalytics_Button10);
+			helper.highLightElement(driver, showAnalytics_Button10);
+			String linkText1 = showAnalytics_Button10.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button10);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 11th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date11);
+			helper.waitFor(current_date11);
+			helper.highLightElement(driver, current_date11);
+			String imageDate = current_date11.getText();
+			helper.jsCLick(current_date11);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button11);
+			helper.waitFor(showAnalytics_Button11);
+			helper.highLightElement(driver, showAnalytics_Button11);
+			String linkText1 = showAnalytics_Button11.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button11);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 12th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date12);
+			helper.waitFor(current_date12);
+			helper.highLightElement(driver, current_date12);
+			String imageDate = current_date12.getText();
+			helper.jsCLick(current_date12);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button12);
+			helper.waitFor(showAnalytics_Button12);
+			helper.highLightElement(driver, showAnalytics_Button12);
+			String linkText1 = showAnalytics_Button12.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button12);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 13th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date13);
+			helper.waitFor(current_date13);
+			helper.highLightElement(driver, current_date13);
+			String imageDate = current_date13.getText();
+			helper.jsCLick(current_date13);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button13);
+			helper.waitFor(showAnalytics_Button13);
+			helper.highLightElement(driver, showAnalytics_Button13);
+			String linkText1 = showAnalytics_Button13.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button13);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 14th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date14);
+			helper.waitFor(current_date14);
+			helper.highLightElement(driver, current_date14);
+			String imageDate = current_date14.getText();
+			helper.jsCLick(current_date14);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button14);
+			helper.waitFor(showAnalytics_Button14);
+			helper.highLightElement(driver, showAnalytics_Button14);
+			String linkText1 = showAnalytics_Button14.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button14);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 15th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date15);
+			helper.waitFor(current_date15);
+			helper.highLightElement(driver, current_date15);
+			String imageDate = current_date15.getText();
+			helper.jsCLick(current_date15);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button15);
+			helper.waitFor(showAnalytics_Button15);
+			helper.highLightElement(driver, showAnalytics_Button15);
+			String linkText1 = showAnalytics_Button15.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button15);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+	*/		
 			//Last Seven Days
 			
+			Reporter.log("");
 			Reporter.log("<B><font color = 'green'> Domain Registration Date : Last Seven Days -</font> ");
 			
 		    helper.waitFor(clearSearchField);
@@ -362,6 +2523,7 @@ public class InstagramDomainRegistrationDatePage extends BasePage{
 			helper.jsCLick(clearSearchField);
 			Reporter.log("<B><font color = 'orange'> Step 1 -</font> Clicked On clear search.");
 			
+			helper.waitForPageToLoad();
 		    helper.waitFor(domain_Reg_Date_DropDown);
 			helper.highLightElement(driver, domain_Reg_Date_DropDown);
 			helper.jsCLick(domain_Reg_Date_DropDown);
@@ -376,7 +2538,6 @@ public class InstagramDomainRegistrationDatePage extends BasePage{
 			helper.highLightElement(driver, search_bar);
 			helper.jsCLick(search_bar);
 			Reporter.log("<B><font color = 'orange'> Step 4 -</font> Clicked On Search Bar.");
-			
 			helper.waitForPageToLoad();
 			
 			helper.waitFor(toatal_Count_Ads);
@@ -386,16 +2547,24 @@ public class InstagramDomainRegistrationDatePage extends BasePage{
 			Reporter.log("<B><font color = 'orange'> Step 5 -</font> Total_Ads_Count_LastSevenDays= " + Total_Ads_Count_LastSevenDays);
 			
 			
-			helper.waitFor(current_Image_Date);
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 1st -</font> ");
+			
 			try {
-			helper.highLightElement(driver, current_Image_Date);
-			helper.jsCLick(current_Image_Date);
-			Reporter.log("<B><font color = 'orange'> Step 6 -</font> Clicked On Current Image Date.");
+			helper.Scrollintoview(current_date1);
+			helper.waitFor(current_date1);
+			helper.highLightElement(driver, current_date1);
+			String imageDate = current_date1.getText();
+			helper.jsCLick(current_date1);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
 
-			helper.waitFor(showAnalytics_Button);
-			helper.highLightElement(driver, showAnalytics_Button);
-			helper.jsCLick(showAnalytics_Button);
-			Reporter.log("<B><font color = 'orange'> Step 7 -</font> Clicked On ShowAnalytics Button.");
+			helper.Scrollintoview(showAnalytics_Button1);
+			helper.waitFor(showAnalytics_Button1);
+			helper.highLightElement(driver, showAnalytics_Button1);
+			String linkText1 = showAnalytics_Button1.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button1);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
 
 			Set<String> S1=driver.getWindowHandles();
 		    Iterator<String>it=S1.iterator();
@@ -403,25 +2572,725 @@ public class InstagramDomainRegistrationDatePage extends BasePage{
 		    String child=it.next();
 		    
 		    driver.switchTo().window(child);
-			
+		    
 		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
 		    helper.waitFor(domain_reg_Date);
 		    helper.highLightElement(driver, domain_reg_Date);
 		    String domainRegDate = domain_reg_Date.getText();
-		    Reporter.log("<B><font color = 'orange'> Step 8 -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
-		    
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
 		    
 		    driver.close();
-			
+		    
 		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
 			}
 			catch (Exception e) {
-		    	 Reporter.log("<B><font color = 'orange'> Step 6 -</font> Oops! Looks like we don't have data for this search criteria yet.");
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 2nd -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date2);
+			helper.waitFor(current_date2);
+			helper.highLightElement(driver, current_date2);
+			String imageDate = current_date2.getText();
+			helper.jsCLick(current_date2);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button2);
+			helper.waitFor(showAnalytics_Button2);
+			helper.highLightElement(driver, showAnalytics_Button2);
+			String linkText1 = showAnalytics_Button2.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button2);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 3rd -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date3);
+			helper.waitFor(current_date3);
+			helper.highLightElement(driver, current_date3);
+			String imageDate = current_date3.getText();
+			helper.jsCLick(current_date3);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button3);
+			helper.waitFor(showAnalytics_Button3);
+			helper.highLightElement(driver, showAnalytics_Button3);
+			String linkText1 = showAnalytics_Button3.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button3);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 4th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date4);
+			helper.waitFor(current_date4);
+			helper.highLightElement(driver, current_date4);
+			String imageDate = current_date4.getText();
+			helper.jsCLick(current_date4);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button4);
+			helper.waitFor(showAnalytics_Button4);
+			helper.highLightElement(driver, showAnalytics_Button4);
+			String linkText1 = showAnalytics_Button4.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button4);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 5th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date5);
+			helper.waitFor(current_date5);
+			helper.highLightElement(driver, current_date5);
+			String imageDate = current_date5.getText();
+			helper.jsCLick(current_date5);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button5);
+			helper.waitFor(showAnalytics_Button5);
+			helper.highLightElement(driver, showAnalytics_Button5);
+			String linkText1 = showAnalytics_Button5.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button5);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 6th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date6);
+			helper.waitFor(current_date6);
+			helper.highLightElement(driver, current_date6);
+			String imageDate = current_date6.getText();
+			helper.jsCLick(current_date6);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button6);
+			helper.waitFor(showAnalytics_Button6);
+			helper.highLightElement(driver, showAnalytics_Button6);
+			String linkText1 = showAnalytics_Button6.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button6);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 7th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date7);
+			helper.waitFor(current_date7);
+			helper.highLightElement(driver, current_date7);
+			String imageDate = current_date7.getText();
+			helper.jsCLick(current_date7);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button7);
+			helper.waitFor(showAnalytics_Button7);
+			helper.highLightElement(driver, showAnalytics_Button7);
+			String linkText1 = showAnalytics_Button7.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button7);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 8th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date8);
+			helper.waitFor(current_date8);
+			helper.highLightElement(driver, current_date8);
+			String imageDate = current_date8.getText();
+			helper.jsCLick(current_date8);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button8);
+			helper.waitFor(showAnalytics_Button8);
+			helper.highLightElement(driver, showAnalytics_Button8);
+			String linkText1 = showAnalytics_Button8.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button8);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 9th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date9);
+			helper.waitFor(current_date9);
+			helper.highLightElement(driver, current_date9);
+			String imageDate = current_date9.getText();
+			helper.jsCLick(current_date9);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button9);
+			helper.waitFor(showAnalytics_Button9);
+			helper.highLightElement(driver, showAnalytics_Button9);
+			String linkText1 = showAnalytics_Button9.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button9);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 10th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date10);
+			helper.waitFor(current_date10);
+			helper.highLightElement(driver, current_date10);
+			String imageDate = current_date10.getText();
+			helper.jsCLick(current_date10);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button10);
+			helper.waitFor(showAnalytics_Button10);
+			helper.highLightElement(driver, showAnalytics_Button10);
+			String linkText1 = showAnalytics_Button10.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button10);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 11th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date11);
+			helper.waitFor(current_date11);
+			helper.highLightElement(driver, current_date11);
+			String imageDate = current_date11.getText();
+			helper.jsCLick(current_date11);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button11);
+			helper.waitFor(showAnalytics_Button11);
+			helper.highLightElement(driver, showAnalytics_Button11);
+			String linkText1 = showAnalytics_Button11.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button11);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 12th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date12);
+			helper.waitFor(current_date12);
+			helper.highLightElement(driver, current_date12);
+			String imageDate = current_date12.getText();
+			helper.jsCLick(current_date12);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button12);
+			helper.waitFor(showAnalytics_Button12);
+			helper.highLightElement(driver, showAnalytics_Button12);
+			String linkText1 = showAnalytics_Button12.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button12);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 13th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date13);
+			helper.waitFor(current_date13);
+			helper.highLightElement(driver, current_date13);
+			String imageDate = current_date13.getText();
+			helper.jsCLick(current_date13);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button13);
+			helper.waitFor(showAnalytics_Button13);
+			helper.highLightElement(driver, showAnalytics_Button13);
+			String linkText1 = showAnalytics_Button13.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button13);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 14th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date14);
+			helper.waitFor(current_date14);
+			helper.highLightElement(driver, current_date14);
+			String imageDate = current_date14.getText();
+			helper.jsCLick(current_date14);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button14);
+			helper.waitFor(showAnalytics_Button14);
+			helper.highLightElement(driver, showAnalytics_Button14);
+			String linkText1 = showAnalytics_Button14.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button14);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 15th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date15);
+			helper.waitFor(current_date15);
+			helper.highLightElement(driver, current_date15);
+			String imageDate = current_date15.getText();
+			helper.jsCLick(current_date15);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button15);
+			helper.waitFor(showAnalytics_Button15);
+			helper.highLightElement(driver, showAnalytics_Button15);
+			String linkText1 = showAnalytics_Button15.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button15);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
 			}
 			
 			//Last Thirty Days
 			
-			
+			Reporter.log("");
 			Reporter.log("<B><font color = 'green'> Domain Registration Date : Last Thirty Days -</font> ");
 			
 		    helper.waitFor(clearSearchField);
@@ -451,16 +3320,24 @@ public class InstagramDomainRegistrationDatePage extends BasePage{
 			Reporter.log("<B><font color = 'orange'> Step 5 -</font> Total_Ads_Count_LastThirtyDays= " + Total_Ads_Count_LastThirtyDays);
 			helper.waitForPageToLoad();
 			
-			helper.waitFor(current_Image_Date);
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 1st -</font> ");
+			
 			try {
-			helper.highLightElement(driver, current_Image_Date);
-			helper.jsCLick(current_Image_Date);
-			Reporter.log("<B><font color = 'orange'> Step 6 -</font> Clicked On Current Image Date.");
+			helper.Scrollintoview(current_date1);
+			helper.waitFor(current_date1);
+			helper.highLightElement(driver, current_date1);
+			String imageDate = current_date1.getText();
+			helper.jsCLick(current_date1);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
 
-			helper.waitFor(showAnalytics_Button);
-			helper.highLightElement(driver, showAnalytics_Button);
-			helper.jsCLick(showAnalytics_Button);
-			Reporter.log("<B><font color = 'orange'> Step 7 -</font> Clicked On ShowAnalytics Button.");
+			helper.Scrollintoview(showAnalytics_Button1);
+			helper.waitFor(showAnalytics_Button1);
+			helper.highLightElement(driver, showAnalytics_Button1);
+			String linkText1 = showAnalytics_Button1.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button1);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
 
 			Set<String> S1=driver.getWindowHandles();
 		    Iterator<String>it=S1.iterator();
@@ -468,24 +3345,724 @@ public class InstagramDomainRegistrationDatePage extends BasePage{
 		    String child=it.next();
 		    
 		    driver.switchTo().window(child);
-			
+		    
 		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
 		    helper.waitFor(domain_reg_Date);
 		    helper.highLightElement(driver, domain_reg_Date);
 		    String domainRegDate = domain_reg_Date.getText();
-		    Reporter.log("<B><font color = 'orange'> Step 8 -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
 		    
 		    driver.close();
-			
+		    
 		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
 			}
 			catch (Exception e) {
-		    	 Reporter.log("<B><font color = 'orange'> Step 6 -</font> Oops! Looks like we don't have data for this search criteria yet.");
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
 			}
 			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 2nd -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date2);
+			helper.waitFor(current_date2);
+			helper.highLightElement(driver, current_date2);
+			String imageDate = current_date2.getText();
+			helper.jsCLick(current_date2);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button2);
+			helper.waitFor(showAnalytics_Button2);
+			helper.highLightElement(driver, showAnalytics_Button2);
+			String linkText1 = showAnalytics_Button2.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button2);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 3rd -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date3);
+			helper.waitFor(current_date3);
+			helper.highLightElement(driver, current_date3);
+			String imageDate = current_date3.getText();
+			helper.jsCLick(current_date3);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button3);
+			helper.waitFor(showAnalytics_Button3);
+			helper.highLightElement(driver, showAnalytics_Button3);
+			String linkText1 = showAnalytics_Button3.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button3);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 4th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date4);
+			helper.waitFor(current_date4);
+			helper.highLightElement(driver, current_date4);
+			String imageDate = current_date4.getText();
+			helper.jsCLick(current_date4);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button4);
+			helper.waitFor(showAnalytics_Button4);
+			helper.highLightElement(driver, showAnalytics_Button4);
+			String linkText1 = showAnalytics_Button4.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button4);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 5th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date5);
+			helper.waitFor(current_date5);
+			helper.highLightElement(driver, current_date5);
+			String imageDate = current_date5.getText();
+			helper.jsCLick(current_date5);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button5);
+			helper.waitFor(showAnalytics_Button5);
+			helper.highLightElement(driver, showAnalytics_Button5);
+			String linkText1 = showAnalytics_Button5.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button5);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 6th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date6);
+			helper.waitFor(current_date6);
+			helper.highLightElement(driver, current_date6);
+			String imageDate = current_date6.getText();
+			helper.jsCLick(current_date6);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button6);
+			helper.waitFor(showAnalytics_Button6);
+			helper.highLightElement(driver, showAnalytics_Button6);
+			String linkText1 = showAnalytics_Button6.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button6);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 7th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date7);
+			helper.waitFor(current_date7);
+			helper.highLightElement(driver, current_date7);
+			String imageDate = current_date7.getText();
+			helper.jsCLick(current_date7);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button7);
+			helper.waitFor(showAnalytics_Button7);
+			helper.highLightElement(driver, showAnalytics_Button7);
+			String linkText1 = showAnalytics_Button7.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button7);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 8th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date8);
+			helper.waitFor(current_date8);
+			helper.highLightElement(driver, current_date8);
+			String imageDate = current_date8.getText();
+			helper.jsCLick(current_date8);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button8);
+			helper.waitFor(showAnalytics_Button8);
+			helper.highLightElement(driver, showAnalytics_Button8);
+			String linkText1 = showAnalytics_Button8.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button8);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 9th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date9);
+			helper.waitFor(current_date9);
+			helper.highLightElement(driver, current_date9);
+			String imageDate = current_date9.getText();
+			helper.jsCLick(current_date9);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button9);
+			helper.waitFor(showAnalytics_Button9);
+			helper.highLightElement(driver, showAnalytics_Button9);
+			String linkText1 = showAnalytics_Button9.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button9);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 10th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date10);
+			helper.waitFor(current_date10);
+			helper.highLightElement(driver, current_date10);
+			String imageDate = current_date10.getText();
+			helper.jsCLick(current_date10);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button10);
+			helper.waitFor(showAnalytics_Button10);
+			helper.highLightElement(driver, showAnalytics_Button10);
+			String linkText1 = showAnalytics_Button10.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button10);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 11th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date11);
+			helper.waitFor(current_date11);
+			helper.highLightElement(driver, current_date11);
+			String imageDate = current_date11.getText();
+			helper.jsCLick(current_date11);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button11);
+			helper.waitFor(showAnalytics_Button11);
+			helper.highLightElement(driver, showAnalytics_Button11);
+			String linkText1 = showAnalytics_Button11.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button11);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 12th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date12);
+			helper.waitFor(current_date12);
+			helper.highLightElement(driver, current_date12);
+			String imageDate = current_date12.getText();
+			helper.jsCLick(current_date12);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button12);
+			helper.waitFor(showAnalytics_Button12);
+			helper.highLightElement(driver, showAnalytics_Button12);
+			String linkText1 = showAnalytics_Button12.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button12);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 13th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date13);
+			helper.waitFor(current_date13);
+			helper.highLightElement(driver, current_date13);
+			String imageDate = current_date13.getText();
+			helper.jsCLick(current_date13);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button13);
+			helper.waitFor(showAnalytics_Button13);
+			helper.highLightElement(driver, showAnalytics_Button13);
+			String linkText1 = showAnalytics_Button13.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button13);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 14th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date14);
+			helper.waitFor(current_date14);
+			helper.highLightElement(driver, current_date14);
+			String imageDate = current_date14.getText();
+			helper.jsCLick(current_date14);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button14);
+			helper.waitFor(showAnalytics_Button14);
+			helper.highLightElement(driver, showAnalytics_Button14);
+			String linkText1 = showAnalytics_Button14.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button14);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 15th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date15);
+			helper.waitFor(current_date15);
+			helper.highLightElement(driver, current_date15);
+			String imageDate = current_date15.getText();
+			helper.jsCLick(current_date15);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button15);
+			helper.waitFor(showAnalytics_Button15);
+			helper.highLightElement(driver, showAnalytics_Button15);
+			String linkText1 = showAnalytics_Button15.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button15);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
 			//This Month
 			
-			
+			Reporter.log("");
 			Reporter.log("<B><font color = 'green'> Domain Registration Date : This Month -</font> ");
 			
 		    helper.waitFor(clearSearchField);
@@ -493,6 +4070,7 @@ public class InstagramDomainRegistrationDatePage extends BasePage{
 			helper.jsCLick(clearSearchField);
 			Reporter.log("<B><font color = 'orange'> Step 1 -</font> Clicked On clear search.");
 			
+			helper.waitForPageToLoad();
 		    helper.waitFor(domain_Reg_Date_DropDown);
 			helper.highLightElement(driver, domain_Reg_Date_DropDown);
 			helper.jsCLick(domain_Reg_Date_DropDown);
@@ -517,16 +4095,24 @@ public class InstagramDomainRegistrationDatePage extends BasePage{
 			Reporter.log("<B><font color = 'orange'> Step 5 -</font> Total_Ads_Count_ThisMonth= " + Total_Ads_Count_ThisMonth);
 			
 			
-			helper.waitFor(current_Image_Date);
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 1st -</font> ");
+			
 			try {
-			helper.highLightElement(driver, current_Image_Date);
-			helper.jsCLick(current_Image_Date);
-			Reporter.log("<B><font color = 'orange'> Step 6 -</font> Clicked On Current Image Date.");
+			helper.Scrollintoview(current_date1);
+			helper.waitFor(current_date1);
+			helper.highLightElement(driver, current_date1);
+			String imageDate = current_date1.getText();
+			helper.jsCLick(current_date1);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
 
-			helper.waitFor(showAnalytics_Button);
-			helper.highLightElement(driver, showAnalytics_Button);
-			helper.jsCLick(showAnalytics_Button);
-			Reporter.log("<B><font color = 'orange'> Step 7 -</font> Clicked On ShowAnalytics Button.");
+			helper.Scrollintoview(showAnalytics_Button1);
+			helper.waitFor(showAnalytics_Button1);
+			helper.highLightElement(driver, showAnalytics_Button1);
+			String linkText1 = showAnalytics_Button1.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button1);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
 
 			Set<String> S1=driver.getWindowHandles();
 		    Iterator<String>it=S1.iterator();
@@ -534,24 +4120,724 @@ public class InstagramDomainRegistrationDatePage extends BasePage{
 		    String child=it.next();
 		    
 		    driver.switchTo().window(child);
-			
+		    
 		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
 		    helper.waitFor(domain_reg_Date);
 		    helper.highLightElement(driver, domain_reg_Date);
 		    String domainRegDate = domain_reg_Date.getText();
-		    Reporter.log("<B><font color = 'orange'> Step 8 -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
-		    
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
 		    
 		    driver.close();
-			
+		    
 		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
 			}
 			catch (Exception e) {
-		    	 Reporter.log("<B><font color = 'orange'> Step 6 -</font> Oops! Looks like we don't have data for this search criteria yet.");
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 2nd -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date2);
+			helper.waitFor(current_date2);
+			helper.highLightElement(driver, current_date2);
+			String imageDate = current_date2.getText();
+			helper.jsCLick(current_date2);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button2);
+			helper.waitFor(showAnalytics_Button2);
+			helper.highLightElement(driver, showAnalytics_Button2);
+			String linkText1 = showAnalytics_Button2.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button2);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 3rd -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date3);
+			helper.waitFor(current_date3);
+			helper.highLightElement(driver, current_date3);
+			String imageDate = current_date3.getText();
+			helper.jsCLick(current_date3);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button3);
+			helper.waitFor(showAnalytics_Button3);
+			helper.highLightElement(driver, showAnalytics_Button3);
+			String linkText1 = showAnalytics_Button3.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button3);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 4th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date4);
+			helper.waitFor(current_date4);
+			helper.highLightElement(driver, current_date4);
+			String imageDate = current_date4.getText();
+			helper.jsCLick(current_date4);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button4);
+			helper.waitFor(showAnalytics_Button4);
+			helper.highLightElement(driver, showAnalytics_Button4);
+			String linkText1 = showAnalytics_Button4.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button4);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 5th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date5);
+			helper.waitFor(current_date5);
+			helper.highLightElement(driver, current_date5);
+			String imageDate = current_date5.getText();
+			helper.jsCLick(current_date5);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button5);
+			helper.waitFor(showAnalytics_Button5);
+			helper.highLightElement(driver, showAnalytics_Button5);
+			String linkText1 = showAnalytics_Button5.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button5);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 6th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date6);
+			helper.waitFor(current_date6);
+			helper.highLightElement(driver, current_date6);
+			String imageDate = current_date6.getText();
+			helper.jsCLick(current_date6);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button6);
+			helper.waitFor(showAnalytics_Button6);
+			helper.highLightElement(driver, showAnalytics_Button6);
+			String linkText1 = showAnalytics_Button6.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button6);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 7th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date7);
+			helper.waitFor(current_date7);
+			helper.highLightElement(driver, current_date7);
+			String imageDate = current_date7.getText();
+			helper.jsCLick(current_date7);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button7);
+			helper.waitFor(showAnalytics_Button7);
+			helper.highLightElement(driver, showAnalytics_Button7);
+			String linkText1 = showAnalytics_Button7.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button7);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 8th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date8);
+			helper.waitFor(current_date8);
+			helper.highLightElement(driver, current_date8);
+			String imageDate = current_date8.getText();
+			helper.jsCLick(current_date8);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button8);
+			helper.waitFor(showAnalytics_Button8);
+			helper.highLightElement(driver, showAnalytics_Button8);
+			String linkText1 = showAnalytics_Button8.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button8);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 9th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date9);
+			helper.waitFor(current_date9);
+			helper.highLightElement(driver, current_date9);
+			String imageDate = current_date9.getText();
+			helper.jsCLick(current_date9);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button9);
+			helper.waitFor(showAnalytics_Button9);
+			helper.highLightElement(driver, showAnalytics_Button9);
+			String linkText1 = showAnalytics_Button9.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button9);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 10th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date10);
+			helper.waitFor(current_date10);
+			helper.highLightElement(driver, current_date10);
+			String imageDate = current_date10.getText();
+			helper.jsCLick(current_date10);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button10);
+			helper.waitFor(showAnalytics_Button10);
+			helper.highLightElement(driver, showAnalytics_Button10);
+			String linkText1 = showAnalytics_Button10.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button10);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 11th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date11);
+			helper.waitFor(current_date11);
+			helper.highLightElement(driver, current_date11);
+			String imageDate = current_date11.getText();
+			helper.jsCLick(current_date11);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button11);
+			helper.waitFor(showAnalytics_Button11);
+			helper.highLightElement(driver, showAnalytics_Button11);
+			String linkText1 = showAnalytics_Button11.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button11);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 12th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date12);
+			helper.waitFor(current_date12);
+			helper.highLightElement(driver, current_date12);
+			String imageDate = current_date12.getText();
+			helper.jsCLick(current_date12);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button12);
+			helper.waitFor(showAnalytics_Button12);
+			helper.highLightElement(driver, showAnalytics_Button12);
+			String linkText1 = showAnalytics_Button12.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button12);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 13th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date13);
+			helper.waitFor(current_date13);
+			helper.highLightElement(driver, current_date13);
+			String imageDate = current_date13.getText();
+			helper.jsCLick(current_date13);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button13);
+			helper.waitFor(showAnalytics_Button13);
+			helper.highLightElement(driver, showAnalytics_Button13);
+			String linkText1 = showAnalytics_Button13.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button13);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 14th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date14);
+			helper.waitFor(current_date14);
+			helper.highLightElement(driver, current_date14);
+			String imageDate = current_date14.getText();
+			helper.jsCLick(current_date14);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button14);
+			helper.waitFor(showAnalytics_Button14);
+			helper.highLightElement(driver, showAnalytics_Button14);
+			String linkText1 = showAnalytics_Button14.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button14);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 15th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date15);
+			helper.waitFor(current_date15);
+			helper.highLightElement(driver, current_date15);
+			String imageDate = current_date15.getText();
+			helper.jsCLick(current_date15);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button15);
+			helper.waitFor(showAnalytics_Button15);
+			helper.highLightElement(driver, showAnalytics_Button15);
+			String linkText1 = showAnalytics_Button15.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button15);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
 			}
 			
 			//Last Month
-			
+			Reporter.log("");
 			Reporter.log("<B><font color = 'green'> Domain Registration Date : Last Month -</font> ");
 			
 		    helper.waitFor(clearSearchField);
@@ -559,6 +4845,7 @@ public class InstagramDomainRegistrationDatePage extends BasePage{
 			helper.jsCLick(clearSearchField);
 			Reporter.log("<B><font color = 'orange'> Step 1 -</font> Clicked On clear search.");
 			
+			helper.waitForPageToLoad();
 		    helper.waitFor(domain_Reg_Date_DropDown);
 			helper.highLightElement(driver, domain_Reg_Date_DropDown);
 			helper.jsCLick(domain_Reg_Date_DropDown);
@@ -574,6 +4861,7 @@ public class InstagramDomainRegistrationDatePage extends BasePage{
 			helper.jsCLick(search_bar);
 			Reporter.log("<B><font color = 'orange'> Step 4 -</font> Clicked On Search Bar.");
 			
+			helper.waitForPageToLoad();
 			helper.waitFor(toatal_Count_Ads);
 			helper.highLightElement(driver, toatal_Count_Ads);
 			helper.jsCLick(toatal_Count_Ads);
@@ -581,16 +4869,24 @@ public class InstagramDomainRegistrationDatePage extends BasePage{
 			Reporter.log("<B><font color = 'orange'> Step 5 -</font> Total_Ads_Count_LastMonth= " + Total_Ads_Count_LastMonth);
 			helper.waitForPageToLoad();
 			
-			helper.waitFor(current_Image_Date);
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 1st -</font> ");
+			
 			try {
-			helper.highLightElement(driver, current_Image_Date);
-			helper.jsCLick(current_Image_Date);
-			Reporter.log("<B><font color = 'orange'> Step 6 -</font> Clicked On Current Image Date.");
+			helper.Scrollintoview(current_date1);
+			helper.waitFor(current_date1);
+			helper.highLightElement(driver, current_date1);
+			String imageDate = current_date1.getText();
+			helper.jsCLick(current_date1);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
 
-			helper.waitFor(showAnalytics_Button);
-			helper.highLightElement(driver, showAnalytics_Button);
-			helper.jsCLick(showAnalytics_Button);
-			Reporter.log("<B><font color = 'orange'> Step 7 -</font> Clicked On ShowAnalytics Button.");
+			helper.Scrollintoview(showAnalytics_Button1);
+			helper.waitFor(showAnalytics_Button1);
+			helper.highLightElement(driver, showAnalytics_Button1);
+			String linkText1 = showAnalytics_Button1.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button1);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
 
 			Set<String> S1=driver.getWindowHandles();
 		    Iterator<String>it=S1.iterator();
@@ -598,20 +4894,720 @@ public class InstagramDomainRegistrationDatePage extends BasePage{
 		    String child=it.next();
 		    
 		    driver.switchTo().window(child);
-			
+		    
 		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
 		    helper.waitFor(domain_reg_Date);
 		    helper.highLightElement(driver, domain_reg_Date);
 		    String domainRegDate = domain_reg_Date.getText();
-		    Reporter.log("<B><font color = 'orange'> Step 8 -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
-		    
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
 		    
 		    driver.close();
-			
+		    
 		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
 			}
 			catch (Exception e) {
-		    	 Reporter.log("<B><font color = 'orange'> Step 6 -</font> Oops! Looks like we don't have data for this search criteria yet.");
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 2nd -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date2);
+			helper.waitFor(current_date2);
+			helper.highLightElement(driver, current_date2);
+			String imageDate = current_date2.getText();
+			helper.jsCLick(current_date2);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button2);
+			helper.waitFor(showAnalytics_Button2);
+			helper.highLightElement(driver, showAnalytics_Button2);
+			String linkText1 = showAnalytics_Button2.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button2);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 3rd -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date3);
+			helper.waitFor(current_date3);
+			helper.highLightElement(driver, current_date3);
+			String imageDate = current_date3.getText();
+			helper.jsCLick(current_date3);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button3);
+			helper.waitFor(showAnalytics_Button3);
+			helper.highLightElement(driver, showAnalytics_Button3);
+			String linkText1 = showAnalytics_Button3.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button3);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 4th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date4);
+			helper.waitFor(current_date4);
+			helper.highLightElement(driver, current_date4);
+			String imageDate = current_date4.getText();
+			helper.jsCLick(current_date4);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button4);
+			helper.waitFor(showAnalytics_Button4);
+			helper.highLightElement(driver, showAnalytics_Button4);
+			String linkText1 = showAnalytics_Button4.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button4);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 5th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date5);
+			helper.waitFor(current_date5);
+			helper.highLightElement(driver, current_date5);
+			String imageDate = current_date5.getText();
+			helper.jsCLick(current_date5);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button5);
+			helper.waitFor(showAnalytics_Button5);
+			helper.highLightElement(driver, showAnalytics_Button5);
+			String linkText1 = showAnalytics_Button5.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button5);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 6th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date6);
+			helper.waitFor(current_date6);
+			helper.highLightElement(driver, current_date6);
+			String imageDate = current_date6.getText();
+			helper.jsCLick(current_date6);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button6);
+			helper.waitFor(showAnalytics_Button6);
+			helper.highLightElement(driver, showAnalytics_Button6);
+			String linkText1 = showAnalytics_Button6.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button6);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 7th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date7);
+			helper.waitFor(current_date7);
+			helper.highLightElement(driver, current_date7);
+			String imageDate = current_date7.getText();
+			helper.jsCLick(current_date7);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button7);
+			helper.waitFor(showAnalytics_Button7);
+			helper.highLightElement(driver, showAnalytics_Button7);
+			String linkText1 = showAnalytics_Button7.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button7);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 8th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date8);
+			helper.waitFor(current_date8);
+			helper.highLightElement(driver, current_date8);
+			String imageDate = current_date8.getText();
+			helper.jsCLick(current_date8);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button8);
+			helper.waitFor(showAnalytics_Button8);
+			helper.highLightElement(driver, showAnalytics_Button8);
+			String linkText1 = showAnalytics_Button8.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button8);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 9th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date9);
+			helper.waitFor(current_date9);
+			helper.highLightElement(driver, current_date9);
+			String imageDate = current_date9.getText();
+			helper.jsCLick(current_date9);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button9);
+			helper.waitFor(showAnalytics_Button9);
+			helper.highLightElement(driver, showAnalytics_Button9);
+			String linkText1 = showAnalytics_Button9.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button9);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 10th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date10);
+			helper.waitFor(current_date10);
+			helper.highLightElement(driver, current_date10);
+			String imageDate = current_date10.getText();
+			helper.jsCLick(current_date10);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button10);
+			helper.waitFor(showAnalytics_Button10);
+			helper.highLightElement(driver, showAnalytics_Button10);
+			String linkText1 = showAnalytics_Button10.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button10);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 11th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date11);
+			helper.waitFor(current_date11);
+			helper.highLightElement(driver, current_date11);
+			String imageDate = current_date11.getText();
+			helper.jsCLick(current_date11);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button11);
+			helper.waitFor(showAnalytics_Button11);
+			helper.highLightElement(driver, showAnalytics_Button11);
+			String linkText1 = showAnalytics_Button11.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button11);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 12th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date12);
+			helper.waitFor(current_date12);
+			helper.highLightElement(driver, current_date12);
+			String imageDate = current_date12.getText();
+			helper.jsCLick(current_date12);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button12);
+			helper.waitFor(showAnalytics_Button12);
+			helper.highLightElement(driver, showAnalytics_Button12);
+			String linkText1 = showAnalytics_Button12.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button12);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 13th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date13);
+			helper.waitFor(current_date13);
+			helper.highLightElement(driver, current_date13);
+			String imageDate = current_date13.getText();
+			helper.jsCLick(current_date13);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button13);
+			helper.waitFor(showAnalytics_Button13);
+			helper.highLightElement(driver, showAnalytics_Button13);
+			String linkText1 = showAnalytics_Button13.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button13);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 14th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date14);
+			helper.waitFor(current_date14);
+			helper.highLightElement(driver, current_date14);
+			String imageDate = current_date14.getText();
+			helper.jsCLick(current_date14);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button14);
+			helper.waitFor(showAnalytics_Button14);
+			helper.highLightElement(driver, showAnalytics_Button14);
+			String linkText1 = showAnalytics_Button14.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button14);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 15th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date15);
+			helper.waitFor(current_date15);
+			helper.highLightElement(driver, current_date15);
+			String imageDate = current_date15.getText();
+			helper.jsCLick(current_date15);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button15);
+			helper.waitFor(showAnalytics_Button15);
+			helper.highLightElement(driver, showAnalytics_Button15);
+			String linkText1 = showAnalytics_Button15.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button15);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
 			}
 			
 			//Custom
@@ -660,38 +5656,747 @@ public class InstagramDomainRegistrationDatePage extends BasePage{
 				Reporter.log("<B><font color = 'orange'> Step7 -</font> Total_Ads_Count_Custom= " + Total_Ads_Count_Custom);
 				helper.waitForPageToLoad();
 				
-			    helper.waitFor(current_Image_Date);
-			    try {
-				helper.highLightElement(driver, current_Image_Date);
-				String current_Date_custom_Date = current_Image_Date.getText();
-				System.out.println("current_Date_All : " + current_Date_custom_Date);
-				Reporter.log("<B><font color = 'orange'> Step 8 -</font> Clicked On Custom Month Image = " + current_Date_custom_Date);
-				
-				helper.waitFor(showAnalytics_Button);
-				helper.highLightElement(driver, showAnalytics_Button);
-				helper.jsCLick(showAnalytics_Button);
-				Reporter.log("<B><font color = 'orange'> Step 9 -</font> Clicked on showAnalytics Button");
-				
-				Set<String> S7=driver.getWindowHandles();
-			    Iterator<String>it6=S7.iterator();
-			    String parent6=it6.next();
-			    String child6=it6.next();
-			    
-			    driver.switchTo().window(child6);
-			    
-			    helper.waitForPageToLoad();
-			    helper.waitFor(domain_reg_Date);
-			    helper.highLightElement(driver, domain_reg_Date);
-			    String domainRegDate = domain_reg_Date.getText();
-			    Reporter.log("<B><font color = 'orange'> Step 10 -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
-			    
-			    
-			    driver.switchTo().window(parent6);
-			    }
-			    catch(Exception e) {
-			    	System.out.println("Oops! Looks like we don't have data for this search criteria yet.");
-			    	 Reporter.log("<B><font color = 'orange'> Step 8 -</font> Oops! Looks like we don't have data for this search criteria yet.");
-			    }
+			   
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 1st -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date1);
+			helper.waitFor(current_date1);
+			helper.highLightElement(driver, current_date1);
+			String imageDate = current_date1.getText();
+			helper.jsCLick(current_date1);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button1);
+			helper.waitFor(showAnalytics_Button1);
+			helper.highLightElement(driver, showAnalytics_Button1);
+			String linkText1 = showAnalytics_Button1.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button1);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 2nd -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date2);
+			helper.waitFor(current_date2);
+			helper.highLightElement(driver, current_date2);
+			String imageDate = current_date2.getText();
+			helper.jsCLick(current_date2);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button2);
+			helper.waitFor(showAnalytics_Button2);
+			helper.highLightElement(driver, showAnalytics_Button2);
+			String linkText1 = showAnalytics_Button2.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button2);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 3rd -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date3);
+			helper.waitFor(current_date3);
+			helper.highLightElement(driver, current_date3);
+			String imageDate = current_date3.getText();
+			helper.jsCLick(current_date3);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button3);
+			helper.waitFor(showAnalytics_Button3);
+			helper.highLightElement(driver, showAnalytics_Button3);
+			String linkText1 = showAnalytics_Button3.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button3);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 4th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date4);
+			helper.waitFor(current_date4);
+			helper.highLightElement(driver, current_date4);
+			String imageDate = current_date4.getText();
+			helper.jsCLick(current_date4);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button4);
+			helper.waitFor(showAnalytics_Button4);
+			helper.highLightElement(driver, showAnalytics_Button4);
+			String linkText1 = showAnalytics_Button4.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button4);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 5th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date5);
+			helper.waitFor(current_date5);
+			helper.highLightElement(driver, current_date5);
+			String imageDate = current_date5.getText();
+			helper.jsCLick(current_date5);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button5);
+			helper.waitFor(showAnalytics_Button5);
+			helper.highLightElement(driver, showAnalytics_Button5);
+			String linkText1 = showAnalytics_Button5.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button5);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 6th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date6);
+			helper.waitFor(current_date6);
+			helper.highLightElement(driver, current_date6);
+			String imageDate = current_date6.getText();
+			helper.jsCLick(current_date6);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button6);
+			helper.waitFor(showAnalytics_Button6);
+			helper.highLightElement(driver, showAnalytics_Button6);
+			String linkText1 = showAnalytics_Button6.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button6);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 7th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date7);
+			helper.waitFor(current_date7);
+			helper.highLightElement(driver, current_date7);
+			String imageDate = current_date7.getText();
+			helper.jsCLick(current_date7);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button7);
+			helper.waitFor(showAnalytics_Button7);
+			helper.highLightElement(driver, showAnalytics_Button7);
+			String linkText1 = showAnalytics_Button7.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button7);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 8th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date8);
+			helper.waitFor(current_date8);
+			helper.highLightElement(driver, current_date8);
+			String imageDate = current_date8.getText();
+			helper.jsCLick(current_date8);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button8);
+			helper.waitFor(showAnalytics_Button8);
+			helper.highLightElement(driver, showAnalytics_Button8);
+			String linkText1 = showAnalytics_Button8.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button8);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 9th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date9);
+			helper.waitFor(current_date9);
+			helper.highLightElement(driver, current_date9);
+			String imageDate = current_date9.getText();
+			helper.jsCLick(current_date9);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button9);
+			helper.waitFor(showAnalytics_Button9);
+			helper.highLightElement(driver, showAnalytics_Button9);
+			String linkText1 = showAnalytics_Button9.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button9);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 10th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date10);
+			helper.waitFor(current_date10);
+			helper.highLightElement(driver, current_date10);
+			String imageDate = current_date10.getText();
+			helper.jsCLick(current_date10);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button10);
+			helper.waitFor(showAnalytics_Button10);
+			helper.highLightElement(driver, showAnalytics_Button10);
+			String linkText1 = showAnalytics_Button10.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button10);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 11th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date11);
+			helper.waitFor(current_date11);
+			helper.highLightElement(driver, current_date11);
+			String imageDate = current_date11.getText();
+			helper.jsCLick(current_date11);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button11);
+			helper.waitFor(showAnalytics_Button11);
+			helper.highLightElement(driver, showAnalytics_Button11);
+			String linkText1 = showAnalytics_Button11.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button11);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 12th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date12);
+			helper.waitFor(current_date12);
+			helper.highLightElement(driver, current_date12);
+			String imageDate = current_date12.getText();
+			helper.jsCLick(current_date12);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button12);
+			helper.waitFor(showAnalytics_Button12);
+			helper.highLightElement(driver, showAnalytics_Button12);
+			String linkText1 = showAnalytics_Button12.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button12);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 13th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date13);
+			helper.waitFor(current_date13);
+			helper.highLightElement(driver, current_date13);
+			String imageDate = current_date13.getText();
+			helper.jsCLick(current_date13);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button13);
+			helper.waitFor(showAnalytics_Button13);
+			helper.highLightElement(driver, showAnalytics_Button13);
+			String linkText1 = showAnalytics_Button13.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button13);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 14th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date14);
+			helper.waitFor(current_date14);
+			helper.highLightElement(driver, current_date14);
+			String imageDate = current_date14.getText();
+			helper.jsCLick(current_date14);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button14);
+			helper.waitFor(showAnalytics_Button14);
+			helper.highLightElement(driver, showAnalytics_Button14);
+			String linkText1 = showAnalytics_Button14.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button14);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
+			
+			Reporter.log("");
+			Reporter.log("<B><font color = 'Blue-Violet'> 15th -</font> ");
+			
+			try {
+			helper.Scrollintoview(current_date15);
+			helper.waitFor(current_date15);
+			helper.highLightElement(driver, current_date15);
+			String imageDate = current_date15.getText();
+			helper.jsCLick(current_date15);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On Current Image Date = " + imageDate);
+
+			helper.Scrollintoview(showAnalytics_Button15);
+			helper.waitFor(showAnalytics_Button15);
+			helper.highLightElement(driver, showAnalytics_Button15);
+			String linkText1 = showAnalytics_Button15.getAttribute("href");
+			helper.getAdID(linkText1);
+			helper.jsCLick(showAnalytics_Button15);
+			Reporter.log("<B><font color = 'blue'> ==> -</font> Clicked On ShowAnalytics Button.");
+
+			Set<String> S1=driver.getWindowHandles();
+		    Iterator<String>it=S1.iterator();
+		    String parent=it.next();
+		    String child=it.next();
+		    
+		    driver.switchTo().window(child);
+		    
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(Last_Seen_childWindow);
+		    helper.waitFor(Last_Seen_childWindow);
+		    helper.highLightElement(driver, Last_Seen_childWindow);
+		    String lastSeenDate = Last_Seen_childWindow.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> LastScene_date AdDetails Page= " +  lastSeenDate);
+			
+		    helper.waitForPageToLoad();
+		    helper.Scrollintoview(domain_reg_Date);
+		    helper.waitFor(domain_reg_Date);
+		    helper.highLightElement(driver, domain_reg_Date);
+		    String domainRegDate = domain_reg_Date.getText();
+		    Reporter.log("<B><font color = 'blue'> ==> -</font> Domain Registration Date in AdDetails Page= " +  domainRegDate);
+		    
+		    driver.close();
+		    
+		    driver.switchTo().window(parent);
+		    
+		    helper.getLastseenDate(lastSeenDate, imageDate);
+			}
+			catch (Exception e) {
+		    	 Reporter.log("<B><font color = 'red'> ==> -</font> Oops! Looks like we don't have data for this search criteria yet.");
+			}
 			
 		
 		}

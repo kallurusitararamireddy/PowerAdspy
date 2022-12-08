@@ -12,5 +12,6 @@ public class Verify_Instagram_DashBoard_SortBy extends TestBase{
 		
 		InstagramDashBoardSortByPage sortBy=new InstagramDashBoardSortByPage(getDriver());
 		sortBy.verify_Instagram_Dasboard();
+	
 	}
 }
