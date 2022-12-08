@@ -5,21 +5,42 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.Duration;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Random;
+import java.util.Set;
+
+import org.apache.commons.codec.binary.Base64;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchFrameException;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.CacheLookup;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.ITestResult;
+import org.testng.Reporter;
+
 import com.power.qa.base.TestBase;
 
 /**
@@ -59,18 +80,22 @@ public class Helpers extends TestBase {
 	
 		public void waitFor(WebElement ele) {
 			//waitForPageToLoad();
-			//log("Waiting 10 seconds for element :" + ele + " to be visible");
+			//log("Waiting 60 seconds for element :" + ele + " to be visible");
 			try {
-				new WebDriverWait(getDriver(),Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(ele));
+			//	new WebDriverWait((WebDriver) driver,60).until(ExpectedConditions.visibilityOf(ele));
+			//	new WebDriverWait((WebDriver) driver,Duration.ofSeconds(60)).until(ExpectedConditions.visibilityOf(ele));
+				new WebDriverWait((WebDriver) driver,Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(ele));
 					}catch(Exception e) {
 					}
 		}
 	
 		public void waitForElementToBeClickable(WebElement ele) {
 			//waitForPageToLoad();
-			//log("Waiting 10 seconds for element :" + ele + " to be visible");
+			//log("Waiting 60 seconds for element :" + ele + " to be visible");
 			try {
-				new WebDriverWait(getDriver(),Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(ele));
+			//	new WebDriverWait((WebDriver) driver,60).until(ExpectedConditions.elementToBeClickable(ele));
+			//	new WebDriverWait((WebDriver)driver,Duration.ofSeconds(60)).until(ExpectedConditions.elementToBeClickable(ele));
+				new WebDriverWait((WebDriver)driver,Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(ele));
 					}catch(Exception e) {
 						
 					}
@@ -80,7 +105,8 @@ public class Helpers extends TestBase {
 		public void waitFor(WebElement ele , int time) {
 			waitForPageToLoad();
 			try {
-				new WebDriverWait(getDriver(),Duration.ofSeconds(time)).until(ExpectedConditions.visibilityOf(ele));
+		//		new WebDriverWait((WebDriver) driver,time).until(ExpectedConditions.visibilityOf(ele));
+				new WebDriverWait((WebDriver) driver,Duration.ofSeconds(time)).until(ExpectedConditions.visibilityOf(ele));
 			}catch(Exception e) {
 			}
 		}
@@ -96,12 +122,14 @@ public class Helpers extends TestBase {
 		
 		public void waitFor(ExpectedCondition<Boolean>invisibilityOfAllElements)throws InterruptedException{
 			
-			Thread.sleep(2000);
+		//	Thread.sleep(2000);
+			Thread.sleep(1500);
 		}
 		
 		public void waitForpage() {
 			try {
 				
+			//	Thread.sleep(5000);
 				Thread.sleep(2000);
 			}catch(Exception e) {
 				
@@ -117,7 +145,7 @@ public class Helpers extends TestBase {
 		   {
 		 JavascriptExecutor js = (JavascriptExecutor) getDriver();	       
 	     js.executeScript("arguments[0].scrollIntoView();", Element);
-		   } 
+		   }
 		 public void jsXYCoordinates() throws InterruptedException {
 			 JavascriptExecutor js = (JavascriptExecutor) getDriver();
 			 js.executeScript("window.scrollTo(0,937.6)");
@@ -131,7 +159,8 @@ public class Helpers extends TestBase {
 		
 		try 
 		{
-		Thread.sleep(500);
+		//Thread.sleep(500);
+		Thread.sleep(450);
 		} 
 		catch (InterruptedException e) {
 		
@@ -146,6 +175,7 @@ public class Helpers extends TestBase {
 		
 			try {  
 		
+				// new WebDriverWait(getDriver(),TimeOut).until(ExpectedConditions.visibilityOf(element));
 				new WebDriverWait(getDriver(),Duration.ofSeconds(TimeOut)).until(ExpectedConditions.visibilityOf(element));
 				return true;
 			}
@@ -297,7 +327,7 @@ public class Helpers extends TestBase {
 		public void click(WebElement ele) {
 //			highLightElement( driver, ele);
 			ele.click();
-		//	waitForPageToLoad();
+			waitForPageToLoad();
 		}
 		
 		public void RightClick(WebElement element) throws InterruptedException {
@@ -344,10 +374,69 @@ public class Helpers extends TestBase {
 		public void waitFor(String textToBeDisplayedOnPage) throws InterruptedException {
 			// TODO Auto-generated method stub
 			try {
-				new WebDriverWait(getDriver(),Duration.ofSeconds(60)).until(ExpectedConditions.textToBePresentInElement(driver.get().findElement(By.xpath("//body")), textToBeDisplayedOnPage));
-						}catch(Exception e) {
+		//		new WebDriverWait((WebDriver) driver,60).until(ExpectedConditions.textToBePresentInElement(driver.get().findElement(By.xpath("//body")), textToBeDisplayedOnPage));
+			//	new WebDriverWait((WebDriver) driver,Duration.ofSeconds(60)).until(ExpectedConditions.textToBePresentInElement(driver.get().findElement(By.xpath("//body")), textToBeDisplayedOnPage));
+				new WebDriverWait((WebDriver) driver,Duration.ofSeconds(10)).until(ExpectedConditions.textToBePresentInElement(driver.get().findElement(By.xpath("//body")), textToBeDisplayedOnPage));
+			}catch(Exception e) {
 							System.out.println("TEXT WAS NOT FOUND IN THE CURRENT PAGE" );
 						}
 			
 		}
+		
+		//Spliting the ShowAnalytics getText and taking Ad id.
+		public void getAdID(String linkText1) {
+			
+			String idString = null;
+			//System.out.println("linkText1 : " + linkText1);
+			String[] splitStringid = linkText1.split("/");
+			for(int i=0;i<splitStringid.length;i++) {
+			//	System.out.println("splitStringid size : " + splitStringid.length);
+				String actualDate=splitStringid[splitStringid.length-1]; 
+				System.out.println("actualDate : " + actualDate);
+				Reporter.log("<B><font color = 'blue'> ==> -</font> ID of the Ad = " + actualDate);
+				break;
+			}
+		}
+		
+		//Spliting Last seen date in child window and join the string.
+		public void getLastseenDate(String lastSeenDate_Date , String imageDate) {
+			
+			 String joinString = null;
+		   	//	String[] actualDate = null;
+		   		
+		   		String[] splitString = lastSeenDate_Date.split(" ");
+		   		for(int i=0;i<splitString.length-2;i++) {
+		   		//	String actualDate=splitString[i]; 
+		   			joinString= splitString[i+1]+" "+ splitString[i]+" " + splitString[i+2];
+		   		//	System.out.println("splitString : " + splitString[i]);
+		   			System.out.println("lastseen Date in Last Month: " + joinString);
+		   			break;
+		   		}
+		   	  	Assert.assertEquals(imageDate, joinString);
+		   	  	Reporter.log("<B><font color = 'blue'> ==> -</font> Image Date = "+" "+imageDate+"    ::    " + "Last Seeen Date = "+joinString+" "+" are same == PASS");
+
+				//return joinString;
+		}
+		
+		//Spliting post seen date in child window and join the string.
+				public void getPostDate(String postDate , String imageDate) {
+					
+					 String joinString = null;
+				   	//	String[] actualDate = null;
+				   		
+				   		String[] splitString = postDate.split(" ");
+				   		for(int i=0;i<splitString.length-2;i++) {
+				   		//	String actualDate=splitString[i]; 
+				   			joinString= splitString[i+1]+" "+ splitString[i]+" " + splitString[i+2];
+				   		//	System.out.println("splitString : " + splitString[i]);
+				   			System.out.println("lastseen Date in Last Month: " + joinString);
+				   			break;
+				   		}
+				   	  	Assert.assertEquals(imageDate, joinString);
+				   	  	Reporter.log("<B><font color = 'blue'> ==> -</font> Image Date = "+" "+imageDate+"    ::    " + "Post Date = "+joinString+" "+" are same == PASS");
+
+						//return joinString;
+				}
+		
+		
 }

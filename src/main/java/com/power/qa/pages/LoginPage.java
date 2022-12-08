@@ -3,6 +3,7 @@ package com.power.qa.pages;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -44,6 +45,12 @@ public class LoginPage  extends BasePage{
 	@FindBy(xpath="//label[text()='I'm not a robot']")
 	WebElement iAmNotRobotText;
 	
+	@FindBy(xpath="//button[@class='dropdown-toggle language_dropdown_btn']")
+	WebElement languageDropdown;
+	
+	@FindBy(xpath="//p[text()='Total no. of Ads : ']")
+	WebElement totalAdsCount;
+	
 
 	//driver.findElement(By.xpath("(//div[@class='recaptcha-checkbox-border'])[1]")).click();
 
@@ -80,9 +87,24 @@ public class LoginPage  extends BasePage{
 		Button_login.click();		
 		Reporter.log("<B><font color = 'blue'>Sign In Button .</font></B> Clicked on Submit Button");
 		
-		
-		
 		Thread.sleep(3000);
-	
+		
+		helper.waitFor(languageDropdown);
+		helper.highLightElement(driver, languageDropdown);
+		languageDropdown.click();
+		
+		Thread.sleep(2000);
+		List<WebElement> languageDropDown = driver.findElements(By.xpath("//div[contains(@class,'dropdown-menu top_nav_dropdown_form user_dropdown_div language_')]/ul/li"));
+		for (WebElement language : languageDropDown) {
+			String actualText = language.getText();
+			System.out.println("actualText : " + actualText);
+			if(actualText.equals("English")) {
+				Thread.sleep(3000);
+				language.click();
+				break;
+			}
+			
+		}
+		
 		}
 	}	

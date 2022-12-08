@@ -14,44 +14,39 @@
 	
     <classes>
     
-    	
     		<!--*************************** PowerAdSpy Dashboard Module *****************************-->
-	
+				
+				
+					
 
 			<!--*************************** FaceBook Ads Dashboard Module *****************************-->
-
-
+					<class name="com.power.testcases.Verify_Facebook_SortBy_TestScript"/>
+				
 			<!--*************************** Instagram Ads Dashboard Module *****************************-->
-
-			 	<class name="com.power.testcases.Verify_Instagram_DashBoard_SortBy"/> 
-      		 	<!-- <class name="com.power.testcases.Verify_Instagram_DashBoard_AdSeenBetween"/> 
-      		 	<class name="com.power.testcases.Verify_Instagram_DashBoard_PostDateBetween"/> 
-				<class name="com.power.testcases.Verify_Instagram_DashBoard_DomainRegsDate"/>  -->      		 		
+			 		
+      		 	     		 		
 
 			<!--*************************** Youtube Ads Dashboard Module *****************************-->
-				
-				<class name="com.power.testcases.Verify_Youtube_Dashboard_SortByTest"/> 
+
 
 			<!--*************************** Google Ads Dashboard Module *****************************-->
-
+					<class name="com.power.testcases.Verify_Google_SortBy_TestScript"/>
 
 			<!--*************************** GDN Ads Dashboard Module *****************************-->
+					<class name="com.power.testcases.Verify_Gdn_SortBy_TestScript"/>
 
 
 			<!--*************************** Native Ads Dashboard Module *****************************-->
 
-				<class name="com.power.testcases.Verify_Native_DashBoard_SortByTest"/> 		
 
 			<!--*************************** Reddit Ads Dashboard Module *****************************-->
-
+					<class name="com.power.testcases.Verify_Reddit_SortBy_TestScript"/>
 
 			<!--*************************** Quora Ads Dashboard Module *****************************-->
-			
-				<class name="com.power.testcases.Verify_Quora_DashBoard_SortByTest"/> 
+
 
 			<!--*************************** Pinterest Ads Dashboard Module *****************************-->
-			
-				<class name="com.power.testcases.Verify_Pinterest_DashBoard_SortByTest"/> 
+
 
 			<!--*************************** LinkedIn Ads Dashboard Module *****************************-->
 

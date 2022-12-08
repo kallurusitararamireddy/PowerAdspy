@@ -18,12 +18,9 @@ public class Verify_Facebook_SortBy_TestScript extends TestBase {
 		
 		sortBy.Facebookpage();    					//Facebook page
 		
-	//	sortBy.Facebook_SortBy_Newest();    		//Newest
-		
-		sortBy.Facebook_SortBy_LastSeen();			//Last Seen
-		
-	//	sortBy.Facebook_SortBy_RunningLongest();	//Running Longest
-		
-	//	sortBy.SortBy_Domain_Registration_Date();	//Domain Registration
+		sortBy.Facebook_SortBy_Newest();    		//Newest
+//		sortBy.Facebook_SortBy_LastSeen();			//Last Seen
+// 		sortBy.Facebook_SortBy_RunningLongest();	//Running Longest
+//		sortBy.SortBy_Domain_Registration_Date();	//Domain Registration
 }
 }
